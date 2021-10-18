@@ -1,6 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700&display=swap");
+
 :root {
-  --color-primary: #f55685;
-  --color-secondary: #00004d;
+    --color-primary: #f55685;
+    --color-secondary: #00004d;
+}
+
+@layer base {
+    @font-face {
+        font-family: "Quinta";
+        font-weight: 400;
+        src: url("./fonts/quinta/BwQuintaPro-Regular.woff") format("woff");
+    }
+    @font-face {
+        font-family: "Quinta";
+        font-weight: 500;
+        src: url("./fonts/quinta/BwQuintaPro-Medium.woff") format("woff");
+    }
+    @font-face {
+        font-family: "Quinta";
+        font-weight: 700;
+        src: url("./fonts/quinta/BwQuintaPro-Bold.woff") format("woff");
+    }
+    @font-face {
+        font-family: "Quinta";
+        font-weight: 900;
+        src: url("./fonts/quinta/BwQuintaPro-Black.woff") format("woff");
+    }
+}
+
+h1,
+h2 {
+    font-family: "Quinta", sans-serif;
+}
+
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+div {
+    font-family: "Montserrat", sans-serif;
 }
 
 @tailwind base;
