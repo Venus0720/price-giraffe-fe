@@ -1,36 +1,27 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { InboxIcon } from '@heroicons/react/outline'
 import Graph from './ExampleGraph'
+import images from 'assets/images/'
 
 export default function Example() {
   return (
-    <div className="relative bg-white pt-16 pb-32 overflow-hidden">
-      <div className="relative">
-        <div className="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols- lg:grid-flow-col-dense lg:gap-24">
-          <div className="col-span-2 px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
-            <div>
-              <div>
-                <span className="h-12 w-12 rounded-md flex items-center justify-center bg-indigo-600">
-                  <InboxIcon className="h-6 w-6 text-white" aria-hidden="true" />
-                </span>
-              </div>
-              <div className="mt-6">
-                <h2 className="text-3xl font-extrabold tracking-tight text-gray-900">
-                 Rich data backlog 
-                </h2>
-                <p className="mt-4 text-lg text-gray-500">
-                    View historical price of any product over a period of up to 6 months
-                </p>
-           
-              </div>
-            </div>
-
-          </div>
-          <div className="mt-12 sm:mt-16 lg:mt-0 col-span-3">
-            <div className="pl-4 lg:px-0 lg:m-0 lg:relative lg:h-full m-auto">
-                <Graph /> 
-            </div>
-          </div>
+    <div className="relative pt-16 sm:pt-24 lg:pt-32 lg:pb-32">
+      <div className="mx-auto max-w-md px-4 text-center sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl">
+        <div>
+          <h2 className="text-base font-semibold tracking-wider text-indigo-600 uppercase">Serverless</h2>
+          <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
+            No server? No problem.
+          </p>
+          <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
+            Phasellus lorem quam molestie id quisque diam aenean nulla in. Accumsan in quis quis nunc, ullamcorper
+            malesuada. Eleifend condimentum id viverra nulla.
+          </p>
+        </div>
+        <div className="mt-12">
+          <img
+            className="rounded-lg shadow-xl ring-1 ring-black ring-opacity-5"
+            src={images.PriceGiraffeImg}
+            alt=""
+          />
+          {/* <Graph /> */}
         </div>
       </div>
     </div>

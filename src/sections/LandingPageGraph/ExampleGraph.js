@@ -31,11 +31,6 @@ const data = {
         'May',
         'June',
         'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December',
     ],
     datasets: [
         {
@@ -68,9 +63,8 @@ const data = {
 const MultiType = () => {
     return (
         <div className="bg-white overflow-hidden rounded-lg shadow mt-5">
-            <div className="px-4 py-5 sm:p-6">
+            <div className="sm:p-6">
                 {data ? <Bar data={data} options={options} /> : null}
-
             </div>
         </div>
     )
