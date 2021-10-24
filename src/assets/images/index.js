@@ -11,6 +11,7 @@ import Qoo10Colored from 'assets/images/logos/others/colored/qoo10-colored.png'
 
 //Price Giraffe Logos
 import PriceGiraffeLogoText from 'assets/images/logos/price-giraffe/logo-regular-text.png'
+import PriceGiraffeLogoTextBottom from 'assets/images/logos/price-giraffe/price-giraffe-text-bottom.svg'
 
 const assetsExports = {
     PriceGiraffeImg,
@@ -20,7 +21,8 @@ const assetsExports = {
     ShopeeColored,
     AmazonColored,
     Qoo10Colored,
-    PriceGiraffeLogoText
+    PriceGiraffeLogoText,
+    PriceGiraffeLogoTextBottom,
 }
 
 export default assetsExports

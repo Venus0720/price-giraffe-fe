@@ -1,11 +1,14 @@
+import React from 'react'
+import images from 'assets/images'
+
 const navigation = {
   main: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Accessibility', href: '#' },
-    { name: 'Partners', href: '#' }
+    // { name: 'About', href: '#' },
+    // { name: 'Blog', href: '#' },
+    // { name: 'Jobs', href: '#' },
+    // { name: 'Press', href: '#' },
+    // { name: 'Accessibility', href: '#' },
+    // { name: 'Partners', href: '#' }
   ],
   social: [
     {
@@ -50,6 +53,9 @@ const Footer = () => {
   return (
     <footer className="bg-secondary">
       <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+        <div>
+          {/* <img className= "h-12" src={images.PriceGiraffeLogoTextBottom} alt="" /> */}
+        </div>
         <nav
           className="-mx-5 -my-2 flex flex-wrap justify-center"
           aria-label="Footer"

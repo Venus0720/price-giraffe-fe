@@ -1,4 +1,10 @@
+import React from 'react'
+
+import Banner from 'components/Banner/Banner'
+
 import images from 'assets/images'
+
+
 
 const LandingPageHero = () => {
   return (
@@ -9,10 +15,10 @@ const LandingPageHero = () => {
             <div className="mt-20">
               <div className="mt-6 sm:max-w-xl">
                 <h1 className="text-4xl font-extrabold text-gray-100 tracking-tight sm:text-5xl">
-                  Every E-commerce Platform With Just <span>One</span> Search
+                  Every E-commerce Platform With Just <span className="text-yellow-400">One</span> Search.
                 </h1>
                 <p className="mt-6 text-xl text-gray-100">
-                  Receive valuable pricing insights across every major marketplace in Singapore
+                  Receive valuable pricing insights across every major marketplace in Singapore. Coming to you soon.
                 </p>
               </div>
               <form action="#" className="mt-12 sm:max-w-lg sm:w-full sm:flex">

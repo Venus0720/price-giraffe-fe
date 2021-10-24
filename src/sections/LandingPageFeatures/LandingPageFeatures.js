@@ -1,44 +1,49 @@
-import { AnnotationIcon, GlobeAltIcon, LightningBoltIcon, ScaleIcon } from '@heroicons/react/outline'
+import {
+  BellIcon,
+  TrendingUpIcon,
+  ChartBarIcon,
+  DocumentReportIcon
+} from '@heroicons/react/outline';
 
 const features = [
   {
-    name: 'Competitive exchange rates',
+    name: 'Discover new trends',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: GlobeAltIcon,
+      'Get access to data across all marketplaces to make vital buying and selling decisions.',
+    icon: TrendingUpIcon
   },
   {
-    name: 'No hidden fees',
+    name: 'Set real time alerts',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: ScaleIcon,
+      'Create smart alerts that tracks the changes in prices real time and updates you if the prices hit your target. ',
+    icon: BellIcon
   },
   {
-    name: 'Transfers are instant',
+    name: 'Premium analytics',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: LightningBoltIcon,
+      'Perform all your E-commerce product research on our platform using fresh data and analytic tools provided by us.',
+    icon: ChartBarIcon
   },
   {
-    name: 'Mobile notifications',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: AnnotationIcon,
-  },
-]
+    name: 'Export detailed reports',
+    description: 'Receive detailed E-commerce analytic reports delivered directly to your inbox on a daily basis.',
+    icon: DocumentReportIcon
+  }
+];
 
 export default function Example() {
   return (
-    <div className="pt-20 py-12 bg-white">
+    <div className="pt-28 py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">Transactions</h2>
+          <h2 className="text-base text-primary font-semibold tracking-wide uppercase">
+            Features
+          </h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            A better way to send money
+            Retrieve data analyics & discover trends
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-            accusamus quisquam.
+            Access our premium database of fresh data collected daily that will keep you up to date on the latest trends and changes
           </p>
         </div>
 
@@ -47,17 +52,21 @@ export default function Example() {
             {features.map((feature) => (
               <div key={feature.name} className="relative">
                 <dt>
-                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
                     <feature.icon className="h-6 w-6" aria-hidden="true" />
                   </div>
-                  <p className="ml-16 text-lg leading-6 font-medium text-gray-900">{feature.name}</p>
+                  <p className="ml-16 text-lg leading-6 font-medium text-gray-900">
+                    {feature.name}
+                  </p>
                 </dt>
-                <dd className="mt-2 ml-16 text-base text-gray-500">{feature.description}</dd>
+                <dd className="mt-2 ml-16 text-base text-gray-500">
+                  {feature.description}
+                </dd>
               </div>
             ))}
           </dl>
         </div>
       </div>
     </div>
-  )
+  );
 }
