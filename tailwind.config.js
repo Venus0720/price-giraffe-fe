@@ -7,12 +7,11 @@ module.exports = {
                 primary: "var(--color-primary)",
                 secondary: "var(--color-secondary)",
             },
-            fontFamily: {
-          },
+            fontFamily: {},
         },
     },
     variants: {
         extend: {},
     },
-    plugins: [],
+    plugins: [require("@tailwindcss/forms")],
 };

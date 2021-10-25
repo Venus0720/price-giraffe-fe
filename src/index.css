@@ -9,30 +9,32 @@
     @font-face {
         font-family: "Quinta";
         font-weight: 400;
-        src: url("./fonts/quinta/BwQuintaPro-Regular.woff") format("woff");
+        src: url("./assets/fonts/quinta/BwQuintaPro-Regular.woff") format("woff");
     }
     @font-face {
         font-family: "Quinta";
         font-weight: 500;
-        src: url("./fonts/quinta/BwQuintaPro-Medium.woff") format("woff");
+        src: url("./assets/fonts/quinta/BwQuintaPro-Medium.woff") format("woff");
     }
     @font-face {
         font-family: "Quinta";
         font-weight: 700;
-        src: url("./fonts/quinta/BwQuintaPro-Bold.woff") format("woff");
+        src: url("./assets/fonts/quinta/BwQuintaPro-Bold.woff") format("woff");
     }
     @font-face {
         font-family: "Quinta";
         font-weight: 900;
-        src: url("./fonts/quinta/BwQuintaPro-Black.woff") format("woff");
+        src: url("./assets/fonts/quinta/BwQuintaPro-Black.woff") format("woff");
     }
 }
 
-h1,
+/* h1,
 h2 {
     font-family: "Quinta", sans-serif;
-}
+} */
 
+h1,
+h2,
 h3,
 h4,
 h5,
