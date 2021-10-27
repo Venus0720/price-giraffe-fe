@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 const navigation = {
   main: [
     { name: 'About Us', route: '/about' },
-    { name: 'FAQ', href: '#' },
-    { name: 'Privacy Policy', href: '#' },
+    { name: 'FAQ', route: '/faq' },
+    { name: 'Privacy Policy', route: '#' },
 
-    { name: 'Terms & Conditions', href: '#' },
+    { name: 'Terms & Conditions', route: '#' },
   ],
   social: [
     {

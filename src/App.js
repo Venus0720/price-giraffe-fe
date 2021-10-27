@@ -4,6 +4,7 @@ import {Switch, Route} from 'react-router-dom'
 
 import LandingPage from 'pages/LandingPage'
 import AboutUs from 'pages/AboutUs'
+import FAQ from 'pages/FAQ'
 
 const App = () => {
     return (
@@ -11,6 +12,7 @@ const App = () => {
         <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/about" component={AboutUs}/>
+            <Route exact path="/faq" component={FAQ}/>
         </Switch>
         </>
     )
