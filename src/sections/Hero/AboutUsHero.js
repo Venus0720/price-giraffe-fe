@@ -2,7 +2,7 @@ import React from 'react'
 
 import images from 'assets/images'
 
-export default function Example() {
+const AboutUsHero = () => {
     return (
         <div className="bg-white">
             <div>
@@ -28,3 +28,5 @@ export default function Example() {
         </div>
     )
 }
+
+export default AboutUsHero

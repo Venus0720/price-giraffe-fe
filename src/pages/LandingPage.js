@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 import Stacked from 'layout/Stacked'
 
 import Banner from 'components/Banner/Banner'
@@ -9,11 +9,15 @@ import LandingPageCTA from 'components/CTA/LandingPageCTA'
 
 
 const LandingPage = () => {
+
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
     return (
         <>
             <Stacked>
                 <LandingPageHero />
-                <LandingPageFeatures/>
+                <LandingPageFeatures />
                 <LandingPageGraph />
                 <LandingPageCTA />
             </Stacked>

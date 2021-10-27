@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useLayoutEffect} from 'react'
 import Stacked from 'layout/Stacked'
 import { Disclosure } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/outline'
@@ -69,7 +69,9 @@ const faqs = [
 
 
 const FAQ = () => {
-
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
     return (
         <Stacked>
           <div className="bg-white">

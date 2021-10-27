@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 import Stacked from 'layout/Stacked'
 
 const PrivacyPolicy = () => {
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
     return (
         <Stacked>
             <div className="relative py-16 bg-white overflow-hidden max-w-7xl mx-auto">

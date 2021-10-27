@@ -8,6 +8,7 @@ import AliExpressColored from 'assets/images/logos/others/colored/aliexpress-col
 import AmazonColored from 'assets/images/logos/others/colored/amazon-colored.svg'
 import CarousellColored from 'assets/images/logos/others/colored/carousell-colored.svg'
 import EbayColored from 'assets/images/logos/others/colored/ebay-colored.svg'
+import LazadaColored from 'assets/images/logos/others/colored/lazada-colored.svg'
 import ShopeeColored from 'assets/images/logos/others/colored/shopee-colored.svg'
 import Qoo10Colored from 'assets/images/logos/others/colored/qoo10-colored.png'
 
@@ -23,6 +24,7 @@ const assetsExports = {
     AliExpressColored,
     CarousellColored,
     EbayColored,
+    LazadaColored,
     ShopeeColored,
     AmazonColored,
     Qoo10Colored,

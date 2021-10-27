@@ -10,6 +10,7 @@ import Terms from 'pages/Terms'
 
 
 const App = () => {
+
     return (
         <>
             <Switch>
