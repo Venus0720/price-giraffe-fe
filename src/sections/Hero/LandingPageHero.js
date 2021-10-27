@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Banner from 'components/Banner/Banner'
 
 import images from 'assets/images'
 
+import MailService from 'services/mail'
 
 
 const LandingPageHero = () => {
+  const [email, setEmail] = useState("")
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const submitEmail = async () => {
+    console.log(email)
+    const response = await MailService.registerMailList({email: email})
+    console.log(response)
+  }
+
   return (
     <div className="bg-secondary pb-8 sm:pb-12 lg:pb-12">
       <div className="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-36">
@@ -21,7 +34,7 @@ const LandingPageHero = () => {
                   Receive valuable pricing insights across every major marketplace in Singapore. Coming to you soon.
                 </p>
               </div>
-              <form action="#" className="mt-12 sm:max-w-lg sm:w-full sm:flex">
+              <form className="mt-12 sm:max-w-lg sm:w-full sm:flex">
                 <div className="min-w-0 flex-1">
                   <label htmlFor="hero-email" className="sr-only">
                     Email address
@@ -31,10 +44,12 @@ const LandingPageHero = () => {
                     type="email"
                     className="block w-full border border-gray-300 rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                     placeholder="Enter your email"
+                    onChange={handleEmailChange}
                   />
                 </div>
                 <div className="mt-4 sm:mt-0 sm:ml-3">
                   <button
+                    onClick={submitEmail}
                     type="submit"
                     className="block w-full rounded-md border border-transparent px-5 py-3 bg-primary text-base font-medium text-white shadow hover:bg-pink-800 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 sm:px-10"
                   >
@@ -98,7 +113,7 @@ const LandingPageHero = () => {
         </h2>
         <div className="flow-root mt-8 lg:mt-10">
           <div className="-mt-4 -ml-8 flex flex-wrap justify-between lg:-ml-4">
-       
+
             <div className="mt-4 ml-8 flex flex-grow flex-shrink-0 lg:flex-grow-0 lg:ml-4">
               <img
                 className="h-10"

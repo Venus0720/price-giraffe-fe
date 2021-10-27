@@ -1,6 +1,7 @@
 //PHOTOS
 import PriceGiraffeProductImg from 'assets/images/photos/price-giraffe-product.jpg'
 import PriceGiraffeGraphImg from 'assets/images/photos/price-giraffe-graph.jpg'
+import AboutUsHero from 'assets/images/photos/about-us-hero.png'
 
 //LOGOS
 import AliExpressColored from 'assets/images/logos/others/colored/aliexpress-colored.svg'
@@ -18,6 +19,7 @@ import PriceGiraffeLogoTextBottom from 'assets/images/logos/price-giraffe/price-
 const assetsExports = {
     PriceGiraffeProductImg,
     PriceGiraffeGraphImg,
+    AboutUsHero,
     AliExpressColored,
     CarousellColored,
     EbayColored,

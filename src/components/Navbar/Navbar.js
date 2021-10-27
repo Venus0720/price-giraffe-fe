@@ -1,6 +1,7 @@
 import React from 'react'
 import images from 'assets/images'
 import { Disclosure } from '@headlessui/react';
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
@@ -11,11 +12,12 @@ const Navbar = () => {
                         <div className="flex justify-between h-20">
                             <div className="flex">
                                 <div className="flex-shrink-0 flex items-center">
-                                    <img
-                                        className="block h-12 w-auto"
-                                        src={images.PriceGiraffeLogoText}
-                                        alt="Price Giraffe Logo"
-                                    />
+                                    <Link to="/">
+                                        <img className="block h-12 w-auto"
+                                            src={images.PriceGiraffeLogoText}
+                                            alt="Price Giraffe Logo"
+                                        />
+                                    </Link>
                                 </div>
                             </div>
                         </div>

@@ -3,9 +3,9 @@ import { SpeakerphoneIcon, XIcon } from '@heroicons/react/outline'
 
 const Banner = ({ label, button = false }) => {
     return (
-        <div className="fixed top-30 inset-x-0 pb-2 sm:pb-5 z-index-50">
+        <div className="fixed bottom-0 inset-x-0 pb-2 sm:pb-5 z-50">
             <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-                <div className="p-2 rounded-lg bg-indigo-600 shadow-lg sm:p-3">
+                <div className="p-2 rounded-lg bg-indigo-700 shadow-lg sm:p-3">
                     <div className="flex items-center justify-between flex-wrap">
                         <div className="w-0 flex-1 flex items-center">
                             <span className="flex p-2 rounded-lg bg-indigo-800">
