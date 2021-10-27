@@ -81,7 +81,7 @@ const FAQ = () => {
               Can’t find the answer you’re looking for? Reach out to our{' '}
               <a href="mailto:hello@pricegiraffe.co" className="font-medium text-secondary hover:text-indigo-900">
                 customer support
-              </a>{' '}
+              </a>
               team.
             </p>
           </div>
