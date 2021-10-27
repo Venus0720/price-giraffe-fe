@@ -85,7 +85,7 @@ const LandingPageHero = () => {
             <div className="relative pl-4 mt-16 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-4/5 lg:pl-12">
               <img
                 className="w-full rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto lg:max-w-none"
-                src={images.PriceGiraffeImg}
+                src={images.PriceGiraffeProductImg}
                 alt=""
               />
             </div>

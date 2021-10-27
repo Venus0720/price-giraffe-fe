@@ -17,7 +17,7 @@ const LandingPageGraph = () => {
         <div className="mt-12">
           <img
             className="rounded-lg shadow-xl ring-1 ring-black ring-opacity-5"
-            src={images.PriceGiraffeImg}
+            src={images.PriceGiraffeGraphImg}
             alt=""
           />
           {/* <Graph /> */}

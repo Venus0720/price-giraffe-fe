@@ -4,10 +4,11 @@ import { Disclosure } from '@headlessui/react';
 
 const Navbar = () => {
     return (
-        <Disclosure as="nav" className="bg-secondary shadow">
+        <header class="sticky top-0 z-50">
+            <Disclosure as="nav" className="bg-secondary shadow">
                 <>
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="flex justify-between h-24">
+                        <div className="flex justify-between h-20">
                             <div className="flex">
                                 <div className="flex-shrink-0 flex items-center">
                                     <img
@@ -20,7 +21,8 @@ const Navbar = () => {
                         </div>
                     </div>
                 </>
-        </Disclosure>
+            </Disclosure>
+        </header>
     );
 };
 export default Navbar;

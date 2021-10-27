@@ -1,5 +1,6 @@
 //PHOTOS
-import PriceGiraffeImg from 'assets/images/photos/price-giraffe.png'
+import PriceGiraffeProductImg from 'assets/images/photos/price-giraffe-product.jpg'
+import PriceGiraffeGraphImg from 'assets/images/photos/price-giraffe-graph.jpg'
 
 //LOGOS
 import AliExpressColored from 'assets/images/logos/others/colored/aliexpress-colored.svg'
@@ -10,17 +11,20 @@ import ShopeeColored from 'assets/images/logos/others/colored/shopee-colored.svg
 import Qoo10Colored from 'assets/images/logos/others/colored/qoo10-colored.png'
 
 //Price Giraffe Logos
+import PriceGiraffeLogo from 'assets/images/logos/price-giraffe/logo.png'
 import PriceGiraffeLogoText from 'assets/images/logos/price-giraffe/logo-regular-text.png'
 import PriceGiraffeLogoTextBottom from 'assets/images/logos/price-giraffe/price-giraffe-text-bottom.svg'
 
 const assetsExports = {
-    PriceGiraffeImg,
+    PriceGiraffeProductImg,
+    PriceGiraffeGraphImg,
     AliExpressColored,
     CarousellColored,
     EbayColored,
     ShopeeColored,
     AmazonColored,
     Qoo10Colored,
+    PriceGiraffeLogo,
     PriceGiraffeLogoText,
     PriceGiraffeLogoTextBottom,
 }
