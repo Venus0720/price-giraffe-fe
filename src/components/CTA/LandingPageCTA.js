@@ -1,98 +1,68 @@
-/*
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
+import MailService from 'services/mail'
+import { setNotificationMessage } from 'reducers/notificationReducer'
+
+const LandingPageCTA = () => {
+  const dispatch = useDispatch()
+  const [email, setEmail] = useState("")
+  // const [submitted, setSubmitted] = useState(false)
+
+  const handleEmailChange = (e) => {
+    e.preventDefault()
+    console.log(e.target.value)
+    setEmail(e.target.value)
   }
-  ```
-*/
-export default function Example() {
-    return (
-      <div className="bg-white py-16 sm:py-24">
-        <div className="relative sm:py-16">
-          <div aria-hidden="true" className="hidden sm:block">
-            <div className="absolute inset-y-0 left-0 w-1/2 rounded-r-3xl" />
-            <svg className="absolute top-8 left-1/2 -ml-3" width={404} height={392} fill="none" viewBox="0 0 404 392">
-              <defs>
-                <pattern
-                  id="8228f071-bcee-4ec8-905a-2a059a2cc4fb"
-                  x={0}
-                  y={0}
-                  width={20}
-                  height={20}
-                  patternUnits="userSpaceOnUse"
-                >
-                  <rect x={0} y={0} width={4} height={4} className="text-gray-200" fill="currentColor" />
-                </pattern>
-              </defs>
-              <rect width={404} height={392} fill="url(#8228f071-bcee-4ec8-905a-2a059a2cc4fb)" />
-            </svg>
+
+  const submitEmail = async () => {
+    console.log(email)
+
+    const response = await MailService.registerMailList({ email: email })
+    if (response) {
+      dispatch(setNotificationMessage("Email successfully added to mail list"))
+      setEmail("")
+    } 
+  }
+  return (
+    <div className="bg-gradient">
+      <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:py-32 lg:px-8 lg:flex lg:items-center">
+        <div className="lg:w-0 lg:flex-1">
+          <h2 className="text-3xl text-gray-100 sm:text-4xl">The ultimate ecommerce <span className="inline-block"> analytics tool at your fingertips.</span></h2>
+        </div>
+        <div className="mt-8 lg:mt-0 w-96" >
+          <div className="text-center text-gray-100 mb-3">
+            <p>Be the first to get early access!</p>
           </div>
-          <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-            <div className="relative rounded-2xl px-6 py-10 bg-secondary overflow-hidden shadow-xl sm:px-12 sm:py-20">
-              <div aria-hidden="true" className="absolute inset-0 -mt-72 sm:-mt-32 md:mt-0">
-                <svg
-                  className="absolute inset-0 h-full w-full"
-                  preserveAspectRatio="xMidYMid slice"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 1463 360"
-                >
-                  <path
-                    className="text-indigo-500 text-opacity-40"
-                    fill="currentColor"
-                    d="M-82.673 72l1761.849 472.086-134.327 501.315-1761.85-472.086z"
-                  />
-                  <path
-                    className="text-indigo-700 text-opacity-40"
-                    fill="currentColor"
-                    d="M-217.088 544.086L1544.761 72l134.327 501.316-1761.849 472.086z"
-                  />
-                </svg>
-              </div>
-              <div className="relative">
-                <div className="sm:text-center">
-                  <h2 className="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
-                    Get notified when we&rsquo;re launching.
-                  </h2>
-                  <p className="mt-6 mx-auto max-w-2xl text-lg text-indigo-200">
-                The ultimate E-commerce analytical tool at your fingertips. Be the first to get early access!
-                  </p>
-                </div>
-                <form action="#" className="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
-                  <div className="min-w-0 flex-1">
-                    <label htmlFor="cta-email" className="sr-only">
-                      Email address
-                    </label>
-                    <input
-                      id="cta-email"
-                      type="email"
-                      className="block w-full border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600"
-                      placeholder="Enter your email"
-                    />
-                  </div>
-                  <div className="mt-4 sm:mt-0 sm:ml-3">
-                    <button
-                      type="submit"
-                      className="block w-full rounded-md border border-transparent px-5 py-3 bg-primary text-base font-medium text-white shadow hover:bg-pink-800 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 sm:px-10"
-                    >
-                      Notify me
-                    </button>
-                  </div>
-                </form>
-              </div>
+          <form className="sm:block">
+            <label htmlFor="email-address" className="sr-only">
+              Email address
+            </label>
+            <input
+              id="email-address"
+              name="email-address"
+              type="email"
+              autoComplete="email"
+              required
+              value={email}
+              onChange={handleEmailChange}
+              className="w-full px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-1 focus:ring-pink-500 focus:border-pink-500 rounded-md"
+              placeholder="Enter your email"
+            />
+            <div className="mt-3 rounded-md shadow  sm:flex-shrink-0">
+              <button
+                type="click"
+                onClick={submitEmail}
+                className="w-full flex items-center justify-center py-3 px-5 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-pink-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
+              >
+                Notify me
+              </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
-    )
-  }
-  
+    </div>
+  )
+}
+
+export default LandingPageCTA

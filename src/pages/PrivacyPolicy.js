@@ -110,7 +110,7 @@ const PrivacyPolicy = () => {
                             <li><strong>Service</strong> refers to the Website.</li>
                             <li><strong>Terms</strong> and Conditions (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.</li>
                             <li><strong>Third-party Social Media Service</strong> means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.</li>
-                            <li><strong>Website</strong> refers to PriceGiraffe, accessible from  <a href="https://pricegiraffe.co" target="_blank" rel="noreferrer">https://pricegiraffe.co</a></li>
+                            <li><strong>Website</strong> refers to PriceGiraffe, accessible from  <a href="https://pricegiraffe.co" target="_blank" rel="noreferrer" >https://pricegiraffe.co</a></li>
                             <li><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</li>
                         </ul>
 
@@ -253,7 +253,7 @@ const PrivacyPolicy = () => {
                                 <p><strong>Google Analytics</strong></p>
                                 <p>Google Analytics is a web analytics service offered by Google that tracks and reports website traffic. Google uses the data collected to track and monitor the use of our Service. This data is shared with other Google services. Google may use the collected data to contextualize and personalize the ads of its own advertising network.</p>
                                 <p>You can opt-out of having made your activity on the Service available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js and dc.js) from sharing information with Google Analytics about visits activity.</p>
-                                <p>For more information on the privacy practices of Google, please visit the Google Privacy &amp; Terms web page: <a href="https://policies.google.com/privacy" rel="external nofollow noopener" target="_blank">https://policies.google.com/privacy</a></p>
+                                <p>For more information on the privacy practices of Google, please visit the Google Privacy &amp; Terms web page: <a href="https://policies.google.com/privacy"  target="_blank" rel="noreferrer">https://policies.google.com/privacy</a></p>
                             </li>
                         </ul>
                         <h2>Email Marketing</h2>
@@ -263,7 +263,7 @@ const PrivacyPolicy = () => {
                             <li>
                                 <p><strong>Mailchimp</strong></p>
                                 <p>Mailchimp is an email marketing sending service provided by The Rocket Science Group LLC.</p>
-                                <p>For more information on the privacy practices of Mailchimp, please visit their Privacy policy: <a href="https://mailchimp.com/legal/privacy/" rel="external nofollow noopener" target="_blank">https://mailchimp.com/legal/privacy/</a></p>
+                                <p>For more information on the privacy practices of Mailchimp, please visit their Privacy policy: <a href="https://mailchimp.com/legal/privacy/"  target="_blank" rel="noreferrer">https://mailchimp.com/legal/privacy/</a></p>
                             </li>
                         </ul>
                         <h2>Behavioral Remarketing</h2>
@@ -276,9 +276,9 @@ const PrivacyPolicy = () => {
                         </ul>
                         <p>Some of these third-party vendors may use non-cookie technologies that may not be impacted by browser settings that block cookies. Your browser may not permit You to block such technologies. You can use the following third-party tools to decline the collection and use of information for the purpose of serving You interest-based advertising:</p>
                         <ul>
-                            <li>The NAI's opt-out platform: <a href="http://www.networkadvertising.org/choices/" rel="external nofollow noopener" target="_blank">http://www.networkadvertising.org/choices/</a></li>
-                            <li>The EDAA's opt-out platform <a href="http://www.youronlinechoices.com/" rel="external nofollow noopener" target="_blank">http://www.youronlinechoices.com/</a></li>
-                            <li>The DAA's opt-out platform: <a href="http://optout.aboutads.info/?c=2&amp;lang=EN" rel="external nofollow noopener" target="_blank">http://optout.aboutads.info/?c=2&amp;lang=EN</a></li>
+                            <li>The NAI's opt-out platform: <a href="http://www.networkadvertising.org/choices/"  target="_blank" rel="noreferrer">http://www.networkadvertising.org/choices/</a></li>
+                            <li>The EDAA's opt-out platform <a href="http://www.youronlinechoices.com/"  target="_blank" rel="noreferrer">http://www.youronlinechoices.com/</a></li>
+                            <li>The DAA's opt-out platform: <a href="http://optout.aboutads.info/?c=2&amp;lang=EN"  target="_blank" rel="noreferrer">http://optout.aboutads.info/?c=2&amp;lang=EN</a></li>
                         </ul>
                         <p>You may opt-out of all personalized advertising by enabling privacy features on Your mobile device such as Limit Ad Tracking (iOS) and Opt Out of Ads Personalization (Android). See Your mobile device Help system for more information.</p>
                         <p>We may share information, such as hashed email addresses (if available) or other online identifiers collected on Our Service with these third-party vendors. This allows Our third-party vendors to recognize and deliver You ads across devices and browsers. To read more about the technologies used by these third-party vendors and their cross-device capabilities please refer to the Privacy Policy of each vendor listed below.</p>
@@ -287,17 +287,17 @@ const PrivacyPolicy = () => {
                             <li>
                                 <p><strong>Google Ads (AdWords)</strong></p>
                                 <p>Google Ads (AdWords) remarketing service is provided by Google Inc.</p>
-                                <p>You can opt-out of Google Analytics for Display Advertising and customise the Google Display Network ads by visiting the Google Ads Settings page: <a href="http://www.google.com/settings/ads" rel="external nofollow noopener" target="_blank">http://www.google.com/settings/ads</a></p>
-                                <p>Google also recommends installing the Google Analytics Opt-out Browser Add-on - <a href="https://tools.google.com/dlpage/gaoptout" rel="external nofollow noopener" target="_blank">https://tools.google.com/dlpage/gaoptout</a> - for your web browser. Google Analytics Opt-out Browser Add-on provides visitors with the ability to prevent their data from being collected and used by Google Analytics.</p>
-                                <p>For more information on the privacy practices of Google, please visit the Google Privacy &amp; Terms web page: <a href="https://policies.google.com/privacy" rel="external nofollow noopener" target="_blank">https://policies.google.com/privacy</a></p>
+                                <p>You can opt-out of Google Analytics for Display Advertising and customise the Google Display Network ads by visiting the Google Ads Settings page: <a href="http://www.google.com/settings/ads"  target="_blank" rel="noreferrer">http://www.google.com/settings/ads</a></p>
+                                <p>Google also recommends installing the Google Analytics Opt-out Browser Add-on - <a href="https://tools.google.com/dlpage/gaoptout"  target="_blank" rel="noreferrer">https://tools.google.com/dlpage/gaoptout</a> - for your web browser. Google Analytics Opt-out Browser Add-on provides visitors with the ability to prevent their data from being collected and used by Google Analytics.</p>
+                                <p>For more information on the privacy practices of Google, please visit the Google Privacy &amp; Terms web page: <a href="https://policies.google.com/privacy"  target="_blank" rel="noreferrer">https://policies.google.com/privacy</a></p>
                             </li>
                             <li>
                                 <p><strong>Facebook</strong></p>
                                 <p>Facebook remarketing service is provided by Facebook Inc.</p>
-                                <p>You can learn more about interest-based advertising from Facebook by visiting this page: <a href="https://www.facebook.com/help/516147308587266" rel="external nofollow noopener" target="_blank">https://www.facebook.com/help/516147308587266</a></p>
-                                <p>To opt-out from Facebook's interest-based ads, follow these instructions from Facebook: <a href="https://www.facebook.com/help/568137493302217" rel="external nofollow noopener" target="_blank">https://www.facebook.com/help/568137493302217</a></p>
-                                <p>Facebook adheres to the Self-Regulatory Principles for Online Behavioural Advertising established by the Digital Advertising Alliance. You can also opt-out from Facebook and other participating companies through the Digital Advertising Alliance in the USA <a href="http://www.aboutads.info/choices/" rel="external nofollow noopener" target="_blank">http://www.aboutads.info/choices/</a>, the Digital Advertising Alliance of Canada in Canada <a href="http://youradchoices.ca/" rel="external nofollow noopener" target="_blank">http://youradchoices.ca/</a> or the European Interactive Digital Advertising Alliance in Europe <a href="http://www.youronlinechoices.eu/" rel="external nofollow noopener" target="_blank">http://www.youronlinechoices.eu/</a>, or opt-out using your mobile device settings.</p>
-                                <p>For more information on the privacy practices of Facebook, please visit Facebook's Data Policy: <a href="https://www.facebook.com/privacy/explanation" rel="external nofollow noopener" target="_blank">https://www.facebook.com/privacy/explanation</a></p>
+                                <p>You can learn more about interest-based advertising from Facebook by visiting this page: <a href="https://www.facebook.com/help/516147308587266"  target="_blank" rel="noreferrer">https://www.facebook.com/help/516147308587266</a></p>
+                                <p>To opt-out from Facebook's interest-based ads, follow these instructions from Facebook: <a href="https://www.facebook.com/help/568137493302217"  target="_blank" rel="noreferrer">https://www.facebook.com/help/568137493302217</a></p>
+                                <p>Facebook adheres to the Self-Regulatory Principles for Online Behavioural Advertising established by the Digital Advertising Alliance. You can also opt-out from Facebook and other participating companies through the Digital Advertising Alliance in the USA <a href="http://www.aboutads.info/choices/"  target="_blank" rel="noreferrer">http://www.aboutads.info/choices/</a>, the Digital Advertising Alliance of Canada in Canada <a href="http://youradchoices.ca/"  target="_blank" rel="noreferrer">http://youradchoices.ca/</a> or the European Interactive Digital Advertising Alliance in Europe <a href="http://www.youronlinechoices.eu/"  target="_blank" rel="noreferrer">http://www.youronlinechoices.eu/</a>, or opt-out using your mobile device settings.</p>
+                                <p>For more information on the privacy practices of Facebook, please visit Facebook's Data Policy: <a href="https://www.facebook.com/privacy/explanation"  target="_blank" rel="noreferrer">https://www.facebook.com/privacy/explanation</a></p>
                             </li>
                         </ul>
                         <h2>Children's Privacy</h2>

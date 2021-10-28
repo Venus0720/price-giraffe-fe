@@ -3,8 +3,10 @@ import axios from 'axios'
 
 const registerMailList = async (email) => {
     const response = await axios.post('https:/pricegiraffe.co/api/v1/mailist', email)
-    console.log(response, "res")
-    return response
+    return response.data
 }
 
-export default { registerMailList }
+const mailService = {
+    registerMailList
+}
+export default mailService 

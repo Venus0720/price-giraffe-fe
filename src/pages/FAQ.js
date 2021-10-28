@@ -1,7 +1,6 @@
 import React, {useLayoutEffect} from 'react'
 import Stacked from 'layout/Stacked'
-import { Disclosure } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/outline'
+
 
 const faqs = [
     {

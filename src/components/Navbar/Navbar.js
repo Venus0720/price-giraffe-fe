@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
-        <header class="sticky top-0 z-50">
+        <header className="sticky top-0 z-10">
             <Disclosure as="nav" className="bg-secondary shadow">
                 <>
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,11 +1,11 @@
 import React, { useLayoutEffect } from 'react'
 import Stacked from 'layout/Stacked'
 
-import Banner from 'components/Banner/Banner'
 import LandingPageHero from 'sections/Hero/LandingPageHero'
 import LandingPageFeatures from 'sections/LandingPageFeatures/LandingPageFeatures'
 import LandingPageGraph from 'sections/LandingPageGraph/LandingPageGraph'
 import LandingPageCTA from 'components/CTA/LandingPageCTA'
+import LogoCloud from 'components/LogoCloud/LogoCloud'
 
 
 const LandingPage = () => {
@@ -17,6 +17,7 @@ const LandingPage = () => {
         <>
             <Stacked>
                 <LandingPageHero />
+                <LogoCloud />
                 <LandingPageFeatures />
                 <LandingPageGraph />
                 <LandingPageCTA />
