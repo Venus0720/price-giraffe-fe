@@ -2,6 +2,7 @@
 import PriceGiraffeProductImg from 'assets/images/photos/price-giraffe-product.jpg'
 import PriceGiraffeGraphImg from 'assets/images/photos/price-giraffe-graph.jpg'
 import AboutUsHero from 'assets/images/photos/about-us-hero.png'
+import PriceGiraffeLaptop from 'assets/images/photos/price-giraffe-laptop.png'
 
 //LOGOS
 
@@ -21,6 +22,7 @@ import PriceGiraffeLogoTextBottom from 'assets/images/logos/price-giraffe/price-
 const assetsExports = {
     PriceGiraffeProductImg,
     PriceGiraffeGraphImg,
+    PriceGiraffeLaptop,
     AboutUsHero,
     AliExpressLogo,
     CarousellLogo,

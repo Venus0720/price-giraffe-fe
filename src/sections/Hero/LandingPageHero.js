@@ -7,8 +7,10 @@ import MailService from 'services/mail'
 
 const LandingPageHero = () => {
   const [email, setEmail] = useState("")
+  // const [submitted, setSubmitted] = useState(false)
 
   const handleEmailChange = (e) => {
+    e.preventDefault()
     setEmail(e.target.value)
   }
 
@@ -20,7 +22,7 @@ const LandingPageHero = () => {
 
   return (
     <div className="bg-secondary pb-8 sm:pb-12 lg:pb-12">
-      <div className="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-36">
+      <div className="pt-8 overflow-hidden sm:pt-12 lg:relative lg:pb-36">
         <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24">
           <div>
             <div className="mt-20">
@@ -61,7 +63,7 @@ const LandingPageHero = () => {
 
         <div className="sm:mx-auto sm:max-w-3xl sm:px-6">
           <div className="py-12 sm:relative sm:mt-12 sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-            <div className="hidden sm:block">
+            {/* <div className="hidden sm:block">
               <svg
                 className="absolute top-20 right-1/2 -mr-3 lg:m-0 lg:left-0"
                 width={404}
@@ -94,12 +96,12 @@ const LandingPageHero = () => {
                   fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)"
                 />
               </svg>
-            </div>
-            <div className="relative pl-4 mt-16 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-4/5 lg:pl-12">
+            </div> */}
+            <div className="relative pl-4  -mt-8 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-full">
               <img
                 className="w-full rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto lg:max-w-none"
-                src={images.PriceGiraffeProductImg}
-                alt=""
+                src={images.PriceGiraffeLaptop}
+                alt="Price Giraffe Laptop"
               />
             </div>
           </div>
