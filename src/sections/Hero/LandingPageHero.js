@@ -27,11 +27,12 @@ const LandingPageHero = () => {
           <div>
             <div className="mt-20">
               <div className="mt-6 sm:max-w-xl">
-                <h1 className="text-4xl font-extrabold text-gray-100 tracking-tight sm:text-5xl">
-                  Every E-commerce Platform With Just <span className="text-yellow-400">One</span> Search.
+                <h1 className="text-4xl text-gray-100  sm:text-5xl">
+                  Every ecommerce platform with just <span className="text-yellow-400">one</span> search.
                 </h1>
-                <p className="mt-6 text-xl text-gray-100">
-                  Receive valuable pricing insights across every major marketplace in Singapore. Coming to you soon.
+                <p className="mt-6 text-lg text-gray-200">
+                PriceGiraffe provides buyers and sellers with valuable
+pricing insights across every major marketplace in Singapore.
                 </p>
               </div>
               <form className="mt-12 sm:max-w-lg sm:w-full sm:flex">
