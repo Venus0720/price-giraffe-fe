@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
 
 import images from 'assets/images'
 
 import MailService from 'services/mail'
+import { setNotificationMessage } from 'reducers/notificationReducer';
 
 
 const LandingPageHero = () => {
+  const dispatch = useDispatch()
   const [email, setEmail] = useState("")
   // const [submitted, setSubmitted] = useState(false)
 
@@ -16,8 +19,12 @@ const LandingPageHero = () => {
 
   const submitEmail = async () => {
     console.log(email)
-    const response = await MailService.registerMailList({email: email})
-    console.log(response)
+
+    const response = await MailService.registerMailList({ email: email })
+    if (response) {
+      dispatch(setNotificationMessage("Email successfully added to mail list"))
+      setEmail("")
+    }
   }
 
   return (
@@ -31,8 +38,8 @@ const LandingPageHero = () => {
                   Every ecommerce platform with just <span className="text-yellow-400">one</span> search.
                 </h1>
                 <p className="mt-6 text-lg text-gray-200">
-                PriceGiraffe provides buyers and sellers with valuable
-pricing insights across every major marketplace in Singapore.
+                  PriceGiraffe provides buyers and sellers with valuable
+                  pricing insights across every major marketplace in Singapore.
                 </p>
               </div>
               <form className="mt-12 sm:max-w-lg sm:w-full sm:flex">
@@ -50,8 +57,8 @@ pricing insights across every major marketplace in Singapore.
                 </div>
                 <div className="mt-4 sm:mt-0 sm:ml-3">
                   <button
+                    type="button"
                     onClick={submitEmail}
-                    type="submit"
                     className="block w-full rounded-md border border-transparent px-5 py-3 bg-primary text-base font-medium text-white shadow hover:bg-pink-800 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 sm:px-10"
                   >
                     Notify me

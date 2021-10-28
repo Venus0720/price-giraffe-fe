@@ -1,4 +1,29 @@
-const LandingPageCTA = () =>  {
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
+import MailService from 'services/mail'
+import { setNotificationMessage } from 'reducers/notificationReducer'
+
+const LandingPageCTA = () => {
+  const dispatch = useDispatch()
+  const [email, setEmail] = useState("")
+  // const [submitted, setSubmitted] = useState(false)
+
+  const handleEmailChange = (e) => {
+    e.preventDefault()
+    console.log(e.target.value)
+    setEmail(e.target.value)
+  }
+
+  const submitEmail = async () => {
+    console.log(email)
+
+    const response = await MailService.registerMailList({ email: email })
+    if (response) {
+      dispatch(setNotificationMessage("Email successfully added to mail list"))
+      setEmail("")
+    } 
+  }
   return (
     <div className="bg-gradient">
       <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:py-32 lg:px-8 lg:flex lg:items-center">
@@ -19,12 +44,15 @@ const LandingPageCTA = () =>  {
               type="email"
               autoComplete="email"
               required
+              value={email}
+              onChange={handleEmailChange}
               className="w-full px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-1 focus:ring-pink-500 focus:border-pink-500 rounded-md"
               placeholder="Enter your email"
             />
             <div className="mt-3 rounded-md shadow  sm:flex-shrink-0">
               <button
-                type="submit"
+                type="click"
+                onClick={submitEmail}
                 className="w-full flex items-center justify-center py-3 px-5 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-pink-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
               >
                 Notify me
