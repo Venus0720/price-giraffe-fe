@@ -4,13 +4,14 @@ import PriceGiraffeGraphImg from 'assets/images/photos/price-giraffe-graph.jpg'
 import AboutUsHero from 'assets/images/photos/about-us-hero.png'
 
 //LOGOS
-import AliExpressColored from 'assets/images/logos/others/colored/aliexpress-colored.svg'
-import AmazonColored from 'assets/images/logos/others/colored/amazon-colored.svg'
-import CarousellColored from 'assets/images/logos/others/colored/carousell-colored.svg'
-import EbayColored from 'assets/images/logos/others/colored/ebay-colored.svg'
-import LazadaColored from 'assets/images/logos/others/colored/lazada-colored.svg'
-import ShopeeColored from 'assets/images/logos/others/colored/shopee-colored.svg'
-import Qoo10Colored from 'assets/images/logos/others/colored/qoo10-colored.png'
+
+import AliExpressLogo from 'assets/images/logos/others/regular/aliexpress.svg'
+import AmazonLogo from 'assets/images/logos/others/regular/amazon.svg'
+import CarousellLogo from 'assets/images/logos/others/regular/carousell.svg'
+import LazadaLogo from 'assets/images/logos/others/regular/lazada.svg'
+import ShopeeLogo from 'assets/images/logos/others/regular/shopee.svg'
+import Qoo10Logo from 'assets/images/logos/others/regular/qoo10.png'
+import EbayLogo from 'assets/images/logos/others/regular/ebay.svg'
 
 //Price Giraffe Logos
 import PriceGiraffeLogo from 'assets/images/logos/price-giraffe/logo.png'
@@ -21,13 +22,13 @@ const assetsExports = {
     PriceGiraffeProductImg,
     PriceGiraffeGraphImg,
     AboutUsHero,
-    AliExpressColored,
-    CarousellColored,
-    EbayColored,
-    LazadaColored,
-    ShopeeColored,
-    AmazonColored,
-    Qoo10Colored,
+    AliExpressLogo,
+    CarousellLogo,
+    LazadaLogo,
+    EbayLogo,
+    ShopeeLogo,
+    AmazonLogo,
+    Qoo10Logo,
     PriceGiraffeLogo,
     PriceGiraffeLogoText,
     PriceGiraffeLogoTextBottom,
