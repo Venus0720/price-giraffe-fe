@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, useLocation} from 'react-router-dom'
 
 import LandingPage from 'pages/LandingPage'
 import AboutUs from 'pages/AboutUs'
@@ -11,6 +11,11 @@ import NoPageFound from 'pages/NoPageFound'
 
 
 const App = () => {
+    const location = useLocation()
+
+    useEffect(() => {
+        console.log("location changed")
+    }, [location])
 
     return (
         <>

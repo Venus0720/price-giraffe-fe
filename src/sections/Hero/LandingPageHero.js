@@ -53,6 +53,7 @@ const LandingPageHero = () => {
                   <input
                     id="hero-email"
                     type="email"
+                    value={email}
                     className="block w-full border border-gray-300 rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                     placeholder="Enter your email"
                     onChange={handleEmailChange}
@@ -108,7 +109,7 @@ const LandingPageHero = () => {
                 />
               </svg>
             </div> */}
-            <div className="relative pl-4  -mt-8 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-full">
+            <div className="relative pl-4  md:-mt-8 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-full mt-5">
               <img
                 className="w-full rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto lg:max-w-none"
                 src={images.PriceGiraffeLaptop}

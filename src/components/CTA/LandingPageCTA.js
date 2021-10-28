@@ -10,32 +10,31 @@ const LandingPageCTA = () => {
   // const [submitted, setSubmitted] = useState(false)
 
   const handleEmailChange = (e) => {
-    e.preventDefault()
     setEmail(e.target.value)
   }
 
-  const submitEmail = async () => {
-
+  const submitEmail = async (e) => {
+    e.preventDefault()
     const response = await MailService.registerMailList({ email: email })
     if (response.status === 200) {
       dispatch(setNotificationMessage("Email successfully added to mail list"))
       setEmail("")
-    }  else {
+    } else {
       dispatch(setNotificationMessage("Please enter a valid email"))
- 
+
     }
   }
   return (
     <div className="bg-gradient">
-      <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:py-32 lg:px-8 lg:flex lg:items-center">
+      <div className="max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:py-32 lg:px-8 lg:flex lg:items-center text-center lg:text-left">
         <div className="lg:w-0 lg:flex-1">
           <h2 className="text-3xl text-gray-100 sm:text-4xl">The ultimate ecommerce <span className="inline-block"> analytics tool at your fingertips.</span></h2>
         </div>
-        <div className="mt-8 lg:mt-0 w-96" >
+        <div className="mt-8 lg:mt-0 sm:w-96 m-auto">
           <div className="text-center text-gray-100 mb-3">
             <p>Be the first to get early access!</p>
           </div>
-          <form className="sm:block">
+          <div className="sm:block">
             <label htmlFor="email-address" className="sr-only">
               Email address
             </label>
@@ -59,7 +58,7 @@ const LandingPageCTA = () => {
                 Notify me
               </button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
