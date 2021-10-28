@@ -2,7 +2,7 @@ import axios from 'axios'
 
 
 const registerMailList = async (email) => {
-    const response = await axios.post('https:/pricegiraffe.co/api/v1/mailist', email)
+    const response = await axios.post('/api/v1/mail_list', email)
     return response.data
 }
 
