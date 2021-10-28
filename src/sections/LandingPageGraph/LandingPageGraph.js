@@ -3,24 +3,29 @@ import images from 'assets/images/'
 
 const LandingPageGraph = () => {
   return (
-    <div className="relative pt-16 sm:pt-24 lg:pt-32 lg:pb-32">
-      <div className="mx-auto max-w-md px-4 text-center sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl">
-        <div>
-          <h2 className="text-base font-semibold tracking-wider text-primary uppercase">Our Platform</h2>
-          <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-            Fast, fresh & easy to use
-          </p>
-          <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
-            Use our platform and track individual products to uncover their trends. Make a better purchase decision by finding your best option
-          </p>
-        </div>
-        <div className="mt-12">
-          <img
-            className="rounded-lg shadow-xl ring-1 ring-black ring-opacity-5"
-            src={images.PriceGiraffeGraphImg}
-            alt=""
-          />
-          {/* <Graph /> */}
+    <div className="py-16 bg-white overflow-hidden lg:py-24">
+      <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
+
+        <div className="relative mt-12 sm:mt-16 lg:mt-24">
+          <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
+            <div className="lg:col-start-2">
+              <h2 className="text-4xl mb-8">Rich data backlog</h2>
+              <p className="text-xl leading-6 mb-8 font-medium text-gray-900">Historical Price data</p>
+              <p className="mt-3 text-lg text-gray-500">
+              View historical price data of any product over a period of up to 6 months.
+              </p>
+            </div>
+
+            <div className="relative lg:mt-0 lg:col-start-1 mr-4">
+
+              <img
+                className="relative mx-auto rounded-lg shadow-xl ring-1 ring-black ring-opacity-5"
+                width={600}
+                src={images.PriceGiraffeGraphImg}
+                alt=""
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

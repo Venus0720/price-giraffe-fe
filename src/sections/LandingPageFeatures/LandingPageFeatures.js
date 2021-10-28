@@ -22,17 +22,17 @@ const features = [
   }
 ];
 
-export default function Example() {
+const LandingPageFeatures = () => {
   return (
     <div className="pt-28 py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
         <div className="lg:text-left max-w-lg">
-          <h2 className="text-base text-primary font-semibold tracking-wide uppercase">
+          <p className="text-base text-primary font-semibold tracking-wide uppercase">
             Features
-          </h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-            Retrieve data analyics & discover trends
           </p>
+          <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+            Retrieve data analyics & discover trends
+          </h2>
           {/* <p className="mt-4 max-w-2xl text-xl text-gray-500 ">
             Access our premium database of fresh data collected daily that will keep you up to date on the latest trends and changes
           </p> */}
@@ -43,11 +43,11 @@ export default function Example() {
             {features.map((feature) => (
               <div key={feature.name} className="relative">
                 <dt>
-                  <p className="text-lg leading-6 font-medium text-gray-900">
+                  <p className="text-xl leading-6 font-medium text-gray-900 mb-2">
                     {feature.name}
                   </p>
                 </dt>
-                <dd className="mt-2 text-base text-gray-500">
+                <dd className="mt-2j text-gray-500 text-lg">
                   {feature.description}
                 </dd>
               </div>
@@ -58,3 +58,5 @@ export default function Example() {
     </div>
   );
 }
+
+export default LandingPageFeatures

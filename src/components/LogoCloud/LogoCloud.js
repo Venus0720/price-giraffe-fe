@@ -6,7 +6,7 @@ const LogoCloud = () => {
 <div className="bg-white">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="text-3xl">Analyze prices from all major marketplaces in Singapore</h2>
+          <h2 className="text-4xl">Analyze prices from all major marketplaces in Singapore</h2>
         </div>
         <div className="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-7 lg:mt-8">
           <div className="col-span-1 flex justify-center py-8 px-8">

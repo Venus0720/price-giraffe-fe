@@ -4,13 +4,13 @@ import images from 'assets/images'
 import { Link } from 'react-router-dom'
 
 const navigation = {
-  main: [
-    { name: 'About Us', route: '/about' },
-    { name: 'FAQ', route: '/faq' },
-    { name: 'Privacy Policy', route: '/privacy' },
+  // main: [
+  //   { name: 'About Us', route: '/about' },
+  //   { name: 'FAQ', route: '/faq' },
+  //   { name: 'Privacy Policy', route: '/privacy' },
 
-    { name: 'Terms & Conditions', route: '/terms' },
-  ],
+  //   { name: 'Terms & Conditions', route: '/terms' },
+  // ],
   social: [
     {
       name: 'Facebook',
@@ -68,7 +68,7 @@ const Footer = () => {
           className="-mx-5 -my-2 flex flex-wrap justify-center"
           aria-label="Footer"
         >
-          {navigation.main.map((item) => (
+          {/* {navigation.main.map((item) => (
             <div key={item.name} className="px-5 py-2">
               <Link to={item.route}>
                 <div className="text-base text-gray-100 hover:text-gray-300">
@@ -76,7 +76,7 @@ const Footer = () => {
                 </div>
               </Link>
             </div>
-          ))}
+          ))} */}
         </nav>
         <div className="mt-8 flex justify-center space-x-6">
           {navigation.social.map((item) => (

@@ -49,6 +49,10 @@ h2, h3 {
     font-weight: 600 !important;
 }
 
+.bg-gradient {
+    background-image: linear-gradient(to right,#F55685, #F8AB30);
+}
+
 
 @tailwind base;
 @tailwind components;
