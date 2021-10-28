@@ -11,18 +11,19 @@ const LandingPageCTA = () => {
 
   const handleEmailChange = (e) => {
     e.preventDefault()
-    console.log(e.target.value)
     setEmail(e.target.value)
   }
 
   const submitEmail = async () => {
-    console.log(email)
 
     const response = await MailService.registerMailList({ email: email })
-    if (response) {
+    if (response.status === 200) {
       dispatch(setNotificationMessage("Email successfully added to mail list"))
       setEmail("")
-    } 
+    }  else {
+      dispatch(setNotificationMessage("Please enter a valid email"))
+ 
+    }
   }
   return (
     <div className="bg-gradient">

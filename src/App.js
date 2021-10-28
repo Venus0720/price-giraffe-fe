@@ -7,6 +7,7 @@ import AboutUs from 'pages/AboutUs'
 import FAQ from 'pages/FAQ'
 import PrivacyPolicy from 'pages/PrivacyPolicy'
 import Terms from 'pages/Terms'
+import NoPageFound from 'pages/NoPageFound'
 
 
 const App = () => {
@@ -15,10 +16,11 @@ const App = () => {
         <>
             <Switch>
                 <Route exact path="/" component={LandingPage} />
-                <Route exact path="/about" component={AboutUs} />
-                <Route exact path="/faq" component={FAQ} />
-                <Route exact path="/privacy" component={PrivacyPolicy} />
-                <Route exact path="/terms" component={Terms} />
+                <Route path="/about" component={AboutUs} />
+                <Route path="/faq" component={FAQ} />
+                <Route path="/privacy" component={PrivacyPolicy} />
+                <Route path="/terms" component={Terms} />
+                <Route component={NoPageFound}/>
             </Switch>
         </>
     )
