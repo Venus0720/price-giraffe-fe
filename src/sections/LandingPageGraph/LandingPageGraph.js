@@ -1,4 +1,4 @@
-import Graph from './ExampleGraph'
+import React from 'react'
 import images from 'assets/images/'
 
 const LandingPageGraph = () => {

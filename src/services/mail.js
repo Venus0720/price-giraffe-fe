@@ -7,4 +7,7 @@ const registerMailList = async (email) => {
     return response
 }
 
-export default { registerMailList }
+const mailService = {
+    registerMailList
+}
+export default mailService 

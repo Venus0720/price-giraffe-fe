@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 
-import Banner from 'components/Banner/Banner'
-
 import images from 'assets/images'
 
 import MailService from 'services/mail'

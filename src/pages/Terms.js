@@ -237,7 +237,7 @@ const Terms = () => {
                         <p>If you have any questions about these Terms and Conditions, You can contact us:
 
                         </p>
-                        <ul role>
+                        <ul>
                             <li>By email <a href="mailto:hello@pricegiraffe.co">hello@pricegiraffe.co</a></li>
                         </ul>
                     </div>
