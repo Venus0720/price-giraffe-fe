@@ -1,37 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import images from 'assets/images'
+import images from 'assets/images';
 
-import MailService from 'services/mail'
+import MailService from 'services/mail';
 import { setNotificationMessage } from 'reducers/notificationReducer';
 
-
 const LandingPageHero = () => {
-  const dispatch = useDispatch()
-  const [email, setEmail] = useState("")
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState('');
   // const [submitted, setSubmitted] = useState(false)
 
   const handleEmailChange = (e) => {
-    e.preventDefault()
-    setEmail(e.target.value)
-  }
+    e.preventDefault();
+    setEmail(e.target.value);
+  };
 
   const submitEmail = async () => {
-    console.log(email)
+    console.log(email);
 
-    const response = await MailService.registerMailList({ email: email })
+    const response = await MailService.registerMailList({ email: email });
     if (response.status === 200) {
-      dispatch(setNotificationMessage("Email successfully added to mail list"))
-      setEmail("")
+      dispatch(setNotificationMessage('Email successfully added to mail list'));
+      setEmail('');
     } else {
-      dispatch(setNotificationMessage("Please enter a valid email"))
-
+      dispatch(setNotificationMessage('Please enter a valid email'));
     }
-  }
+  };
 
   return (
-    <div className="bg-secondary pb-8 sm:pb-12 lg:pb-12">
+    <div className="bg-secondary pb-8 sm:pb-12 lg:pb-12 pt-8">
       <div className="pt-8 overflow-hidden sm:pt-12 lg:relative lg:pb-36">
         <div className="text-center text-gray-100 -mt-12">
           <h3 className="text-xl">Coming in December 2021</h3>
@@ -41,11 +39,12 @@ const LandingPageHero = () => {
             <div className="mt-20">
               <div className="mt-6 sm:max-w-xl">
                 <h1 className="text-4xl text-gray-100  sm:text-5xl">
-                  Every ecommerce platform with just <span className="text-yellow-400">one</span> search.
+                  Every ecommerce platform with just{' '}
+                  <span className="text-yellow-400">one</span> search.
                 </h1>
                 <p className="mt-6 text-lg text-gray-200">
-                  PriceGiraffe provides buyers and sellers with valuable
-                  pricing insights across every major marketplace in Singapore.
+                  PriceGiraffe provides buyers and sellers with valuable pricing
+                  insights across every major marketplace in Singapore.
                 </p>
               </div>
               <form className="mt-12 sm:max-w-lg sm:w-full sm:flex">
@@ -122,7 +121,6 @@ const LandingPageHero = () => {
           </div>
         </div>
       </div>
-
     </div>
   );
 };

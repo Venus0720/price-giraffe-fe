@@ -22,7 +22,6 @@ import EbayLogo from 'assets/images/logos/others/regular/ebay.svg';
 //Price Giraffe Logos
 import PriceGiraffeLogo from 'assets/images/logos/price-giraffe/logo.png';
 import PriceGiraffeLogoText from 'assets/images/logos/price-giraffe/logo-regular-text.png';
-import PriceGiraffeLogoTextBottom from 'assets/images/logos/price-giraffe/price-giraffe-text-bottom.svg';
 
 const assetsExports = {
   FeatureAlert,
@@ -41,8 +40,7 @@ const assetsExports = {
   AmazonLogo,
   Qoo10Logo,
   PriceGiraffeLogo,
-  PriceGiraffeLogoText,
-  PriceGiraffeLogoTextBottom
+  PriceGiraffeLogoText
 };
 
 export default assetsExports;
