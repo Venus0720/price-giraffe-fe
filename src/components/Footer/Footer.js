@@ -78,6 +78,9 @@ const Footer = () => {
             </div>
           ))} */}
         </nav>
+        <div className="text-center">
+          <h2 className="text-gray-100 text-xl">Coming in December 2021</h2>
+        </div>
         <div className="mt-8 flex justify-center space-x-6">
           {navigation.social.map((item) => (
             <a

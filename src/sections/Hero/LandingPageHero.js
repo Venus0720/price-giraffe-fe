@@ -33,6 +33,9 @@ const LandingPageHero = () => {
   return (
     <div className="bg-secondary pb-8 sm:pb-12 lg:pb-12">
       <div className="pt-8 overflow-hidden sm:pt-12 lg:relative lg:pb-36">
+        <div className="text-center text-gray-100 -mt-12">
+          <h3 className="text-xl">Coming in December 2021</h3>
+        </div>
         <div className="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-24">
           <div>
             <div className="mt-20">
@@ -54,8 +57,8 @@ const LandingPageHero = () => {
                     id="hero-email"
                     type="email"
                     value={email}
-                    className="block w-full border border-gray-300 rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                    placeholder="Enter your email"
+                    className="block w-full border border-gray-300 rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-pink-500 focus:ring-pink-500"
+                    placeholder="Enter your email to receive updates"
                     onChange={handleEmailChange}
                   />
                 </div>

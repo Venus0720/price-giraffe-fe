@@ -47,7 +47,7 @@ const LandingPageCTA = () => {
               value={email}
               onChange={handleEmailChange}
               className="w-full px-5 py-3 border border-gray-300 shadow-sm placeholder-gray-400 focus:ring-1 focus:ring-pink-500 focus:border-pink-500 rounded-md"
-              placeholder="Enter your email"
+              placeholder="Enter your email to receive updates"
             />
             <div className="mt-3 rounded-md shadow  sm:flex-shrink-0">
               <button
