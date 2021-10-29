@@ -8,6 +8,7 @@ import FAQ from 'pages/FAQ'
 import PrivacyPolicy from 'pages/PrivacyPolicy'
 import Terms from 'pages/Terms'
 import NoPageFound from 'pages/NoPageFound'
+import Features from 'pages/Features'
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
                 <Route path="/faq" component={FAQ} />
                 <Route path="/privacy" component={PrivacyPolicy} />
                 <Route path="/terms" component={Terms} />
+                <Route path="/features" component={Features}/>
                 <Route component={NoPageFound}/>
             </Switch>
         </>
