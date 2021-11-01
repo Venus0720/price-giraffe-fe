@@ -29,7 +29,7 @@ const LandingPageHero = () => {
   };
 
   return (
-    <div className="bg-secondary pb-8 sm:pb-12 lg:pb-12">
+    <div className="bg-secondary pb-8 sm:pb-12 lg:pb-12 pt-8">
       <div className="pt-8 overflow-hidden sm:pt-12 lg:relative lg:pb-36">
         <div className="text-center text-gray-100 lg:-mt-12">
           <h3 className="text-xl">Coming in December 2021</h3>
