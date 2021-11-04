@@ -23,6 +23,11 @@ import EbayLogo from 'assets/images/logos/others/regular/ebay.svg';
 import PriceGiraffeLogo from 'assets/images/logos/price-giraffe/logo.png';
 import PriceGiraffeLogoText from 'assets/images/logos/price-giraffe/logo-regular-text.png';
 
+// Icons
+import HeartIcon from 'assets/images/icons/heart.svg';
+import HeartIconFill from 'assets/images/icons/heart-fill.svg';
+import SearchIcon from 'assets/images/icons/search.svg';
+
 const assetsExports = {
   FeatureAlert,
   FeatureAnalytics,
@@ -40,7 +45,10 @@ const assetsExports = {
   AmazonLogo,
   Qoo10Logo,
   PriceGiraffeLogo,
-  PriceGiraffeLogoText
+  PriceGiraffeLogoText,
+  HeartIcon,
+  HeartIconFill,
+  SearchIcon
 };
 
 export default assetsExports;
