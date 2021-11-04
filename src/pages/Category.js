@@ -27,7 +27,10 @@ const Category = (/* { location } */) => {
   });
 
   useEffect(() => {
-    const params = fetchProductParams({ categoryId, ...ProductSortItems[0].value });
+    const params = fetchProductParams({
+      categoryId,
+      ...ProductSortItems[0].value
+    });
 
     Promise.allSettled([
       fetchCategory(+categoryId),
@@ -60,7 +63,7 @@ const Category = (/* { location } */) => {
   }
 
   function onSortChange(sortParams) {
-    const params = fetchProductParams({ ...sortParams, categoryId })
+    const params = fetchProductParams({ ...sortParams, categoryId });
     return fetchProducts(params);
   }
 
@@ -97,9 +100,7 @@ const Category = (/* { location } */) => {
                 value={keyword}
                 onChange={onKeywordChange}
               /> */}
-              <div className="font-bold text-20px">
-                Products ({total})
-              </div>
+              <div className="font-bold text-20px">Products ({total})</div>
               <div className="flex items-center gap-4">
                 <div className="font-semibold text-sm">Sort by:</div>
                 <ProductSort onChange={onSortChange} />

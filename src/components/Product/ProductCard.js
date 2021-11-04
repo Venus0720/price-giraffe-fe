@@ -62,7 +62,10 @@ export default function ProductCard({ product }) {
           <div className="flex items-center justify-between gap-2">
             <div className="flex-grow text-13px">Compare X Prices</div>
             <div className="max-w-64px max-h-27px">
-              <img src={PlatformImages[product.all_platforms[0]]} alt="Lazada" />
+              <img
+                src={PlatformImages[product.all_platforms[0]]}
+                alt="Lazada"
+              />
             </div>
           </div>
         </div>
