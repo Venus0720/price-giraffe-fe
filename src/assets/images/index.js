@@ -19,6 +19,11 @@ import PriceGiraffeLogo from 'assets/images/logos/price-giraffe/logo.png'
 import PriceGiraffeLogoText from 'assets/images/logos/price-giraffe/logo-regular-text.png'
 import PriceGiraffeLogoTextBottom from 'assets/images/logos/price-giraffe/price-giraffe-text-bottom.svg'
 
+// Icons
+import HeartIcon from 'assets/images/icons/heart.svg'
+import HeartIconFill from 'assets/images/icons/heart-fill.svg'
+import SearchIcon from 'assets/images/icons/search.svg'
+
 const assetsExports = {
     PriceGiraffeProductImg,
     PriceGiraffeGraphImg,
@@ -34,6 +39,9 @@ const assetsExports = {
     PriceGiraffeLogo,
     PriceGiraffeLogoText,
     PriceGiraffeLogoTextBottom,
+    HeartIcon,
+    HeartIconFill,
+    SearchIcon
 }
 
 export default assetsExports

@@ -8,6 +8,8 @@ import FAQ from 'pages/FAQ'
 import PrivacyPolicy from 'pages/PrivacyPolicy'
 import Terms from 'pages/Terms'
 import NoPageFound from 'pages/NoPageFound'
+import Search from 'pages/Search'
+import Category from 'pages/Category'
 
 
 const App = () => {
@@ -25,6 +27,8 @@ const App = () => {
                 <Route path="/faq" component={FAQ} />
                 <Route path="/privacy" component={PrivacyPolicy} />
                 <Route path="/terms" component={Terms} />
+                <Route exact path="/search" component={Search} />
+                <Route exact path="/categories/:categoryId" component={Category} />
                 <Route component={NoPageFound}/>
             </Switch>
         </>
