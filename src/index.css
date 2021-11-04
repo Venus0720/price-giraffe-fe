@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
 :root {
+    --color-grey-background: #f7f7f7;
+    --color-grey-border: #efefef;
     --color-primary: #f55685;
     --color-secondary: #00004d;
 }
@@ -41,7 +43,7 @@ p,
 a,
 div {
     font-family: "Montserrat", sans-serif;
-    font-weight: 500 !important;
+    font-weight: 500;
 }
 
 h2, h3 {
