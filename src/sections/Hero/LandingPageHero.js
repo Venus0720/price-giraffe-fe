@@ -1,32 +1,32 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
-import images from 'assets/images';
+import images from 'assets/images'
 
-import MailService from 'services/mail';
-import { setNotificationMessage } from 'reducers/notificationReducer';
+import MailService from 'services/mail'
+import { setNotificationMessage } from 'reducers/notificationReducer'
 
 const LandingPageHero = () => {
-  const dispatch = useDispatch();
-  const [email, setEmail] = useState('');
+  const dispatch = useDispatch()
+  const [email, setEmail] = useState('')
   // const [submitted, setSubmitted] = useState(false)
 
   const handleEmailChange = (e) => {
-    e.preventDefault();
-    setEmail(e.target.value);
-  };
+    e.preventDefault()
+    setEmail(e.target.value)
+  }
 
   const submitEmail = async () => {
-    console.log(email);
+    console.log(email)
 
-    const response = await MailService.registerMailList({ email: email });
+    const response = await MailService.registerMailList({ email: email })
     if (response.status === 200) {
-      dispatch(setNotificationMessage('Email successfully added to mail list'));
-      setEmail('');
+      dispatch(setNotificationMessage('Email successfully added to mail list'))
+      setEmail('')
     } else {
-      dispatch(setNotificationMessage('Please enter a valid email'));
+      dispatch(setNotificationMessage('Please enter a valid email'))
     }
-  };
+  }
 
   return (
     <div className="bg-secondary pb-8 sm:pb-12 lg:pb-12 pt-8">
@@ -50,7 +50,7 @@ const LandingPageHero = () => {
               <form className="mt-12 sm:max-w-lg sm:w-full sm:flex">
                 <div className="min-w-0 flex-1">
                   <label htmlFor="hero-email" className="sr-only">
-                    Email address
+                    Search
                   </label>
                   <input
                     id="hero-email"
@@ -122,7 +122,7 @@ const LandingPageHero = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LandingPageHero;
+export default LandingPageHero

@@ -1,12 +1,12 @@
 import axios from 'axios'
 
-
 const registerMailList = async (email) => {
-    const response = await axios.post('/api/v1/mail_list', email)
-    return response
+  const response = await axios.post('/api/v1/mail_list', email)
+  return response
 }
 
 const mailService = {
-    registerMailList
+  registerMailList
 }
-export default mailService 
+
+export default mailService
