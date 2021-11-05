@@ -10,11 +10,11 @@ const spacingPxValues = [
   '64px',
   '80px',
   '240px'
-];
-const spacingPx = {};
+]
+const spacingPx = {}
 spacingPxValues.forEach((value) => {
-  spacingPx[value] = value;
-});
+  spacingPx[value] = value
+})
 
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
@@ -31,7 +31,7 @@ module.exports = {
       colors: {
         grey: {
           background: 'var(--color-grey-background)',
-          border: 'var(--color-grey-border)',
+          border: 'var(--color-grey-border)'
         },
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)'
@@ -55,7 +55,10 @@ module.exports = {
             letterSpacing: '-0.18px',
             lineHeight: '27px'
           }
-        ],
+        ]
+      },
+      minHeight: {
+        '3/4screen': '70vh'
       },
       minWidth: {
         ...spacingPx
@@ -77,4 +80,4 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography')
   ]
-};
+}

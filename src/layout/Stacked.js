@@ -9,7 +9,7 @@ const Stacked = ({ landingPage = false, children }) => {
     <>
       {landingPage ? <LandingPageNavbar /> : <Navbar />}
       <Notification />
-      {children}
+      <div className="min-h-3/4screen">{children}</div>
       <Footer />
     </>
   )

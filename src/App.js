@@ -13,6 +13,7 @@ import Features from 'pages/Features'
 import Home from 'pages/Home'
 import Search from 'pages/Search'
 import Category from 'pages/Category'
+import Profile from 'pages/Profile'
 
 import { getCurrentUser } from 'reducers/userReducer'
 
@@ -41,6 +42,7 @@ const App = () => {
         <Route path="/terms" component={Terms} />
         <Route path="/features" component={Features} />
         <Route path="/coming-soon" component={Home} />
+        <Route path="/profile" component={Profile} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/categories/:categoryId" component={Category} />
         <Route component={NoPageFound} />

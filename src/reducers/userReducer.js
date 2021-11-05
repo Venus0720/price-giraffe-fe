@@ -5,8 +5,7 @@ const userReducer = (state = null, action) => {
     case 'GET_USER':
       return state.user
     case 'LOGIN_USER':
-      console.log(state.user, 'state_user')
-      return state.user
+      return action.user
     default:
       return state
   }
@@ -14,10 +13,10 @@ const userReducer = (state = null, action) => {
 
 export const getCurrentUser = () => {
   return async (dispatch) => {
-    const user = await userService.getUser()
+    const { data } = await userService.getUser()
     dispatch({
       type: 'GET_USER',
-      user: user || null
+      user: data.user_info || null
     })
   }
 }
@@ -25,12 +24,19 @@ export const getCurrentUser = () => {
 export const loginUser = (credentials) => {
   return async (dispatch) => {
     const { data } = await userService.loginUser(credentials)
-    //store token
-    console.log(data.access_token)
+    localStorage.setItem('token', data.access_token)
     dispatch({
       type: 'LOGIN_USER',
       user: data.user_info || null
     })
+  }
+}
+
+export const logoutUser = () => {
+  localStorage.removetItem('token')
+  return {
+    type: 'LOGOUT_USER',
+    user: null
   }
 }
 

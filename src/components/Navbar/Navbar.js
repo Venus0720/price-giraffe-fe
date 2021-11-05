@@ -3,18 +3,30 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon, HeartIcon } from '@heroicons/react/outline'
 
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import images from 'assets/images'
 import SignUpModal from 'components/Modals/SignUpModal'
 import Overlay from 'components/Overlay/Overlay'
 import useOverlay from 'hooks/useOverlay'
 
-// const user = {
-//   name: 'Tom Cook',
-//   email: 'tom@example.com',
-//   imageUrl:
-//     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
-// }
+const user = {
+  platform_id: null,
+  avatar: null,
+  status: 'ACTIVE',
+  updated_at: '2021-11-03T08:06:56+00:00',
+  first_name: null,
+  display_name: null,
+  platform_type: null,
+  role: ['USER'],
+  created_at: '2021-10-18T07:06:29+00:00',
+  id: 2,
+  last_name: null,
+  email: 'dlimsg@hotmail.com'
+}
+
+// const user = null
+
 const navigation = [
   // { name: 'Dashboard', href: '#', current: true },
   // { name: 'Team', href: '#', current: false },
@@ -22,9 +34,8 @@ const navigation = [
   // { name: 'Calendar', href: '#', current: false }
 ]
 const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' }
+  { name: 'Your Profile', route: '/profile' },
+  { name: 'Sign out', route: '#' }
 ]
 
 function classNames(...classes) {
@@ -32,7 +43,7 @@ function classNames(...classes) {
 }
 
 const Navbar = () => {
-  const user = useSelector((state) => state.user || null)
+  // const user = useSelector((state) => state.user || null)
   const [overlay, toggleOverlay] = useOverlay()
 
   const openSignInModal = () => {
@@ -52,7 +63,7 @@ const Navbar = () => {
                       <img
                         className="block h-10 w-auto"
                         src={images.PriceGiraffeLogoBlueText}
-                        alt="Workflow"
+                        alt="PriceGiraffe"
                       />
                       {/* <img
                         className="hidden lg:block h-8 w-auto"
@@ -97,14 +108,27 @@ const Navbar = () => {
                     {/* Profile dropdown */}
                     {user ? (
                       <Menu as="div" className="ml-3 relative z-30">
-                        <div>
+                        <div className="ml-4 flex">
+                          <div className="border-l-2 h-6 my-auto mr-6"></div>
                           <Menu.Button className="bg-white flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500">
                             <span className="sr-only">Open user menu</span>
-                            <img
-                              className="h-8 w-8 rounded-full"
-                              src={user.imageUrl}
-                              alt=""
-                            />
+                            {user.avatar ? (
+                              <img
+                                className="h-8 w-8 rounded-full"
+                                src={user.avatar}
+                                alt=""
+                              />
+                            ) : (
+                              <span className="inline-block h-6 w-6 rounded-full overflow-hidden bg-gray-100">
+                                <svg
+                                  className="h-full w-full text-gray-300"
+                                  fill="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                              </span>
+                            )}
                           </Menu.Button>
                         </div>
                         <Transition
@@ -120,15 +144,16 @@ const Navbar = () => {
                             {userNavigation.map((item) => (
                               <Menu.Item key={item.name}>
                                 {({ active }) => (
-                                  <a
-                                    href={item.href}
-                                    className={classNames(
-                                      active ? 'bg-gray-100' : '',
-                                      'block px-4 py-2 text-sm text-gray-700'
-                                    )}
-                                  >
-                                    {item.name}
-                                  </a>
+                                  <Link to={item.route}>
+                                    <div
+                                      className={classNames(
+                                        active ? 'bg-gray-100' : '',
+                                        'block px-4 py-2 text-sm text-gray-700'
+                                      )}
+                                    >
+                                      {item.name}
+                                    </div>
+                                  </Link>
                                 )}
                               </Menu.Item>
                             ))}
