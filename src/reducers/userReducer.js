@@ -24,9 +24,11 @@ export const getCurrentUser = () => {
 export const loginUser = (credentials) => {
   return async (dispatch) => {
     const user = await userService.loginUser(credentials)
+    //store token
+    console.log(user.access_token)
     dispatch({
       type: 'LOGIN_USER',
-      user: user || null
+      user: user.user_info || null
     })
   }
 }
