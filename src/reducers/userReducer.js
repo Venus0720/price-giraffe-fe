@@ -5,6 +5,7 @@ const userReducer = (state = null, action) => {
     case 'GET_USER':
       return state.user
     case 'LOGIN_USER':
+      console.log(state.user, 'state_user')
       return state.user
     default:
       return state
@@ -23,12 +24,12 @@ export const getCurrentUser = () => {
 
 export const loginUser = (credentials) => {
   return async (dispatch) => {
-    const user = await userService.loginUser(credentials)
+    const { data } = await userService.loginUser(credentials)
     //store token
-    console.log(user.access_token)
+    console.log(data.access_token)
     dispatch({
       type: 'LOGIN_USER',
-      user: user.user_info || null
+      user: data.user_info || null
     })
   }
 }
