@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 import { Switch, Route } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import LandingPage from 'pages/LandingPage'
 import AboutUs from 'pages/AboutUs'
@@ -20,8 +20,7 @@ import { getCurrentUser } from 'reducers/userReducer'
 
 const App = () => {
   const dispatch = useDispatch()
-  // const user = useSelector((state) => state.user || null)
-  const user = {}
+  const user = useSelector((state) => state.user || null)
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
