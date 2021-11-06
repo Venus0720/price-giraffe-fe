@@ -42,7 +42,7 @@ const Navbar = () => {
 
   const userNavigation = [
     { name: 'Your Profile', route: '/profile' },
-    { name: 'Sign out', onClick: () => dispatch(logoutUser) }
+    { name: 'Sign out', onClick: () => dispatch(logoutUser()) }
   ]
 
   return (
