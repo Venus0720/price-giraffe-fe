@@ -1,13 +1,18 @@
 import axios from 'axios'
 
+const header = {
+  headers: {
+    Authorization: `Bearer ${localStorage.getItem('token')}`
+  }
+}
+
 const getUser = async () => {
-  const response = await axios.get('/api/v1/current_user')
+  const response = await axios.get('/api/v1/current_user', header)
   return response.data
 }
 
 const loginUser = async (credentials) => {
   const response = await axios.post('/api/v1/login', credentials)
-  console.log(response)
   return response.data
 }
 

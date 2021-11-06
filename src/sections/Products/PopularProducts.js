@@ -16,13 +16,14 @@ const PopularProducts = () => {
       })
       .catch((err) => {
         setError(err)
+        console.log(error)
       })
       .finally(() => setIsLoaded(true))
   }, [])
 
   return (
     <div className="bg-gray-100">
-      <div className="min-h-screen max-w-7xl mx-auto">
+      <div className="h-full max-w-7xl mx-auto">
         <div className="">
           <div className="container py-8">
             <div className="mb-5">

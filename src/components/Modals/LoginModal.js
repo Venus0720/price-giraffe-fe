@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { loginUser } from 'reducers/userReducer'
 import ErrorAlert from 'components/Alerts/ErrorAlert'
 import { toggleModal } from 'reducers/modalReducer'
+import { setNotificationMessage } from 'reducers/notificationReducer'
 import images from 'assets/images'
 
 const LoginModal = () => {
@@ -19,9 +20,14 @@ const LoginModal = () => {
   } = useForm({ mode: 'onSubmit' })
 
   const onFormSubmit = async (credentials) => {
-    const response = dispatch(loginUser(credentials))
-    console.log(response, 'form submit response')
-    // if success
+    try {
+      dispatch(loginUser(credentials))
+      dispatch(toggleModal())
+      dispatch(setNotificationMessage('Successfully logged in!'))
+    } catch (err) {
+      console.log(err)
+      dispatch(setNotificationMessage(err))
+    }
   }
 
   const errorsArray = Object.keys(errors).map((key) => errors[key].message)

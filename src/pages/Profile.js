@@ -36,7 +36,7 @@ const Profile = () => {
     },
     {
       name: 'Liked Items',
-      route: '/profile/favourites/',
+      route: '/profile/favourites',
       icon: HeartIcon,
       current: false
     }
@@ -58,7 +58,7 @@ const Profile = () => {
                     className={classNames(
                       item.current
                         ? 'bg-gray-200 text-orange-600 cursor-normal'
-                        : 'text-gray-900 hover:text-gray-900 hover:bg-gray-50',
+                        : 'text-gray-900 hover:text-gray-900 hover:bg-gray-200',
                       'group rounded-md px-3 py-2 flex items-center text-sm font-medium'
                     )}
                   >

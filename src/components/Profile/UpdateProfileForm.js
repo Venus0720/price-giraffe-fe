@@ -5,23 +5,23 @@ import { useForm } from 'react-hook-form'
 
 import { useSelector } from 'react-redux'
 
-const user = {
-  platform_id: null,
-  avatar: null,
-  status: 'ACTIVE',
-  updated_at: '2021-11-03T08:06:56+00:00',
-  first_name: 'david',
-  display_name: null,
-  platform_type: null,
-  role: ['USER'],
-  created_at: '2021-10-18T07:06:29+00:00',
-  id: 2,
-  last_name: 'lim',
-  email: 'dlimsg@hotmail.com'
-}
+// const user = {
+//   platform_id: null,
+//   avatar: null,
+//   status: 'ACTIVE',
+//   updated_at: '2021-11-03T08:06:56+00:00',
+//   first_name: 'david',
+//   display_name: null,
+//   platform_type: null,
+//   role: ['USER'],
+//   created_at: '2021-10-18T07:06:29+00:00',
+//   id: 2,
+//   last_name: 'lim',
+//   email: 'dlimsg@hotmail.com'
+// }
 
 const UpdateProfileForm = () => {
-  // const user = useSelector((state) => state.user || null)
+  const user = useSelector((state) => state.user || null)
   const {
     register,
     handleSubmit,

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
-import { Switch, Route, useLocation } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
+import { Switch, Route } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 
 import LandingPage from 'pages/LandingPage'
 import AboutUs from 'pages/AboutUs'
@@ -15,23 +15,21 @@ import Search from 'pages/Search'
 import Category from 'pages/Category'
 import Profile from 'pages/Profile'
 
-import LoginModal from 'components/Modals/LoginModal'
-
 import { getCurrentUser } from 'reducers/userReducer'
 
 const App = () => {
-  // const location = useLocation();
-
-  // useEffect(() => {
-  //   console.log('location changed');
-  // }, [location]);
-  const user = useSelector((state) => state.user || null)
   const dispatch = useDispatch()
+  // const user = useSelector((state) => state.user || null)
+  const user = {}
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
       console.log('getting current user')
-      dispatch(getCurrentUser())
+      try {
+        dispatch(getCurrentUser())
+      } catch (err) {
+        console.log(err)
+      }
     }
   }, [dispatch])
 
@@ -45,7 +43,7 @@ const App = () => {
         <Route path="/terms" component={Terms} />
         <Route path="/features" component={Features} />
         <Route path="/coming-soon" component={Home} />
-        <Route path="/profile" component={Profile} />
+        {user && <Route path="/profile" component={Profile} />}
         <Route exact path="/search" component={Search} />
         <Route exact path="/categories/:categoryId" component={Category} />
         <Route component={NoPageFound} />

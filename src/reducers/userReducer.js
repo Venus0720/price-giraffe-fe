@@ -3,7 +3,7 @@ import userService from 'services/user'
 const userReducer = (state = null, action) => {
   switch (action.type) {
     case 'GET_USER':
-      return state.user
+      return action.user
     case 'LOGIN_USER':
       return action.user
     default:
