@@ -10,7 +10,7 @@ const PopularProducts = () => {
   useEffect(() => {
     const prodSvc = new ProductService()
     prodSvc
-      .fetchMany('apple')
+      .fetchMany({ keyword: 'apple' })
       .then((res) => {
         setProducts(res.data.products.splice(0, 10))
       })
