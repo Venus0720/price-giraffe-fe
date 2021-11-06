@@ -9,23 +9,6 @@ import images from 'assets/images'
 import LoginModal from 'components/Modals/LoginModal'
 import { toggleModal } from 'reducers/modalReducer'
 
-// const user = {
-//   platform_id: null,
-//   avatar: null,
-//   status: 'ACTIVE',
-//   updated_at: '2021-11-03T08:06:56+00:00',
-//   first_name: null,
-//   display_name: null,
-//   platform_type: null,
-//   role: ['USER'],
-//   created_at: '2021-10-18T07:06:29+00:00',
-//   id: 2,
-//   last_name: null,
-//   email: 'dlimsg@hotmail.com'
-// }
-
-const user = null
-
 const navigation = [
   // { name: 'Dashboard', href: '#', current: true },
   // { name: 'Team', href: '#', current: false },
@@ -42,7 +25,7 @@ function classNames(...classes) {
 }
 
 const Navbar = () => {
-  // const user = useSelector((state) => state.user || null)
+  const user = useSelector((state) => state.user || null)
   const dispatch = useDispatch()
 
   return (

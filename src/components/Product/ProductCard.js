@@ -1,4 +1,7 @@
 import { useContext, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { toggleModal } from 'reducers/modalReducer'
+
 import images from 'assets/images'
 import { UserContext } from 'contexts/User'
 import ProductService from 'services/product'
@@ -14,14 +17,16 @@ const PlatformImages = {
 }
 
 export default function ProductCard({ product }) {
-  const [state] = useContext(UserContext)
+  const user = useSelector((state) => state.user || null)
+  const dispatch = useDispatch()
   const [isFavorite, setIsFavorite] = useState(product.is_favor)
   const prodSvc = new ProductService()
 
   async function onClick(e) {
     e.preventDefault()
 
-    if (!state.loggedIn) {
+    if (!user) {
+      dispatch(toggleModal('LOGIN'))
       return
     }
 

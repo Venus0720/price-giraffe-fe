@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { loginUser } from 'reducers/userReducer'
 import ErrorAlert from 'components/Alerts/ErrorAlert'
 import { toggleModal } from 'reducers/modalReducer'
+import images from 'assets/images'
 
 const LoginModal = () => {
   const modal = useSelector((state) => state.modal === 'LOGIN' || null)
@@ -66,7 +67,14 @@ const LoginModal = () => {
               <div className="inline-block align-bottom overflow-hidden transform transition-all  sm:align-middle sm:w-full sm:max-w-xl">
                 <div className="min-h-full flex flex-col justify-center">
                   <div className="sm:mx-auto sm:w-full sm:max-w-xl">
-                    <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10 text-left">
+                    <div className="bg-white py-8 px-4 shadow rounded-lg sm:px-10 text-left">
+                      <div className="mx-auto mb-6">
+                        <img
+                          className="block h-32 mx-auto"
+                          src={images.PriceGiraffeLogoBlueTextBelow}
+                          alt=""
+                        />
+                      </div>
                       {errorsArray.length > 0 && (
                         <ErrorAlert errors={errorsArray} />
                       )}
@@ -95,7 +103,7 @@ const LoginModal = () => {
                                   message: 'Please enter a valid email'
                                 }
                               })}
-                              className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                              className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm"
                             />
                           </div>
                         </div>
@@ -116,7 +124,7 @@ const LoginModal = () => {
                                 required: 'Please enter your password'
                               })}
                               autoComplete="current-password"
-                              className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                              className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm"
                             />
                           </div>
                         </div>
@@ -127,7 +135,7 @@ const LoginModal = () => {
                               id="remember-me"
                               name="remember-me"
                               type="checkbox"
-                              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                              className="h-4 w-4 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
                             />
                             <label
                               htmlFor="remember-me"
@@ -140,7 +148,7 @@ const LoginModal = () => {
                           <div className="text-sm">
                             <a
                               href="#"
-                              className="font-medium text-indigo-600 hover:text-indigo-500"
+                              className="font-medium text-primary hover:text-pink-500"
                             >
                               Forgot your password?
                             </a>
@@ -150,13 +158,18 @@ const LoginModal = () => {
                         <div>
                           <button
                             type="submit"
-                            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-secondary hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                           >
                             Sign in
                           </button>
-                          <a href="#" className="text-xs text-center">
-                            Don't have an account?
-                          </a>
+                          <div className="mt-3">
+                            <div href="#" className="text-xs">
+                              Don't have an account?{' '}
+                              <a href="#" className="text-primary">
+                                Click to sign up
+                              </a>
+                            </div>
+                          </div>
                         </div>
                       </form>
                     </div>

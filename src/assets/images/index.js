@@ -24,6 +24,7 @@ import EbayLogo from 'assets/images/logos/others/regular/ebay.svg'
 import PriceGiraffeLogo from 'assets/images/logos/price-giraffe/logo.png'
 import PriceGiraffeLogoText from 'assets/images/logos/price-giraffe/logo-regular-text.png'
 import PriceGiraffeLogoBlueText from 'assets/images/logos/price-giraffe/logo-blue-text.png'
+import PriceGiraffeLogoBlueTextBelow from 'assets/images/logos/price-giraffe/logo-text-below-blue.png'
 
 // Icons
 import HeartIcon from 'assets/images/icons/heart.svg'
@@ -57,6 +58,7 @@ const assetsExports = {
   PriceGiraffeLogo,
   PriceGiraffeLogoText,
   PriceGiraffeLogoBlueText,
+  PriceGiraffeLogoBlueTextBelow,
 
   //Icons
   HeartIcon,
