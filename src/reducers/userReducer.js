@@ -33,7 +33,7 @@ export const loginUser = (credentials) => {
 }
 
 export const logoutUser = () => {
-  localStorage.removetItem('token')
+  localStorage.removeItem('token')
   return {
     type: 'LOGOUT_USER',
     user: null
