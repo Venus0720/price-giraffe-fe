@@ -3,8 +3,7 @@ import React from 'react'
 const Alerts = () => {
   return (
     <div>
-      hello
-      <div>hello</div>
+      <div>Product Alerts go here</div>
     </div>
   )
 }

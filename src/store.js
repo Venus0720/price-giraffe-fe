@@ -3,13 +3,13 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 import notificationReducer from 'reducers/notificationReducer'
-import overlayReducer from 'reducers/overlayReducer'
 import userReducer from 'reducers/userReducer'
+import modalReducer from 'reducers/modalReducer'
 
 const reducers = combineReducers({
   notification: notificationReducer,
-  overlay: overlayReducer,
-  user: userReducer
+  user: userReducer,
+  modal: modalReducer
 })
 
 const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunk)))

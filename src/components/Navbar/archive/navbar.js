@@ -1,12 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import images from 'assets/images';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import images from 'assets/images'
 
 const navigation = [
   { name: 'Home', route: '/' },
   { name: 'Features', route: '/features' },
   { name: 'About Us', route: '/about' }
-];
+]
 
 const LandingPageNavBar = () => {
   return (
@@ -14,14 +14,14 @@ const LandingPageNavBar = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="w-full py-6 lg:grid flex lg:grid-cols-3 border-b border-indigo-500 lg:border-none">
           <div className="flex items-center">
-            <a href="#">
+            <Link to="/">
               <span className="sr-only">Workflow</span>
               <img
                 className="h-10 w-auto"
                 src={images.PriceGiraffeLogoText}
                 alt=""
               />
-            </a>
+            </Link>
           </div>
           <div className="hidden ml-16 space-x-8 lg:block my-auto">
             {navigation.map((link) => (
@@ -59,7 +59,7 @@ const LandingPageNavBar = () => {
         </div>
       </nav>
     </header>
-  );
-};
+  )
+}
 
-export default LandingPageNavBar;
+export default LandingPageNavBar

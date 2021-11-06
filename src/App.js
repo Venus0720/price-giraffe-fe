@@ -15,6 +15,8 @@ import Search from 'pages/Search'
 import Category from 'pages/Category'
 import Profile from 'pages/Profile'
 
+import LoginModal from 'components/Modals/LoginModal'
+
 import { getCurrentUser } from 'reducers/userReducer'
 
 const App = () => {
@@ -27,7 +29,8 @@ const App = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    if (false) {
+    if (localStorage.getItem('token')) {
+      console.log('getting current user')
       dispatch(getCurrentUser())
     }
   }, [dispatch])

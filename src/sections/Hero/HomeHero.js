@@ -3,27 +3,8 @@ import { SearchIcon } from '@heroicons/react/solid'
 
 import images from 'assets/images'
 
-import useOverlay from 'hooks/useOverlay'
-
 const HomeHero = () => {
   const [search, setSearch] = useState('')
-  const [focused, setFocused] = useState(false)
-
-  const [overlay, setOverlay] = useOverlay()
-
-  const onFocus = () => {
-    setFocused(true)
-    console.log('clicked')
-  }
-
-  // const handleClick = () => {
-  //   setOverlay()
-  // }
-
-  const onBlur = () => {
-    setFocused(false)
-    console.log('blurred')
-  }
 
   const searchChangeHandler = (e) => {
     setSearch(e.target.value)
@@ -71,8 +52,6 @@ const HomeHero = () => {
                             type="search"
                             name="search"
                             id="search"
-                            onFocus={onFocus}
-                            onBlur={onBlur}
                             value={search}
                             onChange={searchChangeHandler}
                             className="h-12 focus:ring-pink-500 focus:border-pink-500 block w-full pl-11 sm:text-sm border-gray-300 rounded-md"

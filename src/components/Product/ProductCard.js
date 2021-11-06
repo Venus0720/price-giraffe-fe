@@ -1,7 +1,7 @@
-import { useContext, useState } from 'react';
-import images from 'assets/images';
-import { UserContext } from 'contexts/User';
-import ProductService from 'services/product';
+import { useContext, useState } from 'react'
+import images from 'assets/images'
+import { UserContext } from 'contexts/User'
+import ProductService from 'services/product'
 
 const PlatformImages = {
   AliExpress: images.AliExpressLogo,
@@ -11,30 +11,30 @@ const PlatformImages = {
   Lazada: images.LazadaLogo,
   Qoo10: images.Qoo10Logo,
   Shopee: images.ShopeeLogo
-};
+}
 
 export default function ProductCard({ product }) {
-  const [state] = useContext(UserContext);
-  const [isFavorite, setIsFavorite] = useState(product.is_favor);
-  const prodSvc = new ProductService();
+  const [state] = useContext(UserContext)
+  const [isFavorite, setIsFavorite] = useState(product.is_favor)
+  const prodSvc = new ProductService()
 
   async function onClick(e) {
-    e.preventDefault();
+    e.preventDefault()
 
     if (!state.loggedIn) {
-      return alert('You must login first!');
+      return
     }
 
     try {
       if (isFavorite) {
-        await prodSvc.removeFavorite(product.id);
-        setIsFavorite(false);
+        await prodSvc.removeFavorite(product.id)
+        setIsFavorite(false)
       } else {
-        await prodSvc.addFavorite(product.id);
-        setIsFavorite(true);
+        await prodSvc.addFavorite(product.id)
+        setIsFavorite(true)
       }
     } catch (err) {
-      alert(err.message);
+      alert(err.message)
     }
   }
 
@@ -44,7 +44,7 @@ export default function ProductCard({ product }) {
       alt={product.name}
       className="object-cover rounded-t-lg"
     />
-  );
+  )
 
   return (
     <a href={'/products/' + product.id}>
@@ -78,5 +78,5 @@ export default function ProductCard({ product }) {
         </div>
       </div>
     </a>
-  );
+  )
 }
