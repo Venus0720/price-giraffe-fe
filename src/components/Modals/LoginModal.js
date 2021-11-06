@@ -32,7 +32,6 @@ const LoginModal = () => {
 
   const errorsArray = Object.keys(errors).map((key) => errors[key].message)
 
-  console.log('rendered')
   return (
     modal && (
       <Transition.Root show={modal} as={Fragment}>

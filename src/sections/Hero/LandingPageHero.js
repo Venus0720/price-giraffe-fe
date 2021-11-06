@@ -17,8 +17,6 @@ const LandingPageHero = () => {
   }
 
   const submitEmail = async () => {
-    console.log(email)
-
     const response = await MailService.registerMailList({ email: email })
     if (response.status === 200) {
       dispatch(setNotificationMessage('Email successfully added to mail list'))

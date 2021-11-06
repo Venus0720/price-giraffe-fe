@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 import { Switch, Route } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import LandingPage from 'pages/LandingPage'
 import AboutUs from 'pages/AboutUs'
@@ -14,6 +14,7 @@ import Home from 'pages/Home'
 import Search from 'pages/Search'
 import Category from 'pages/Category'
 import Profile from 'pages/Profile'
+import SignUp from 'pages/SignUp'
 
 import { getCurrentUser } from 'reducers/userReducer'
 
@@ -43,6 +44,7 @@ const App = () => {
         <Route path="/terms" component={Terms} />
         <Route path="/features" component={Features} />
         <Route path="/coming-soon" component={Home} />
+        <Route path="/sign-up" component={SignUp} />
         {user && <Route path="/profile" component={Profile} />}
         <Route exact path="/search" component={Search} />
         <Route exact path="/categories/:categoryId" component={Category} />

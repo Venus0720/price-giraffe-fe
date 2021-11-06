@@ -20,7 +20,6 @@ function classNames(...classes) {
 }
 
 const Profile = () => {
-  console.log(window.location.pathname)
   const subNavigation = [
     {
       name: 'Profile',

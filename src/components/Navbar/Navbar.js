@@ -167,12 +167,11 @@ const Navbar = () => {
                           >
                             Sign in
                           </div>
-                          <button
-                            onClick={() => dispatch(toggleModal('LOGIN'))}
-                            className="mr-6 inline-flex items-center px-10 py-2 border border-primary text-white shadow-sm font-medium rounded-md bg-primary hover:bg-pink-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 sm:text-sm"
-                          >
-                            Sign up
-                          </button>
+                          <Link to="/sign-up">
+                            <button className="mr-6 inline-flex items-center px-10 py-2 border border-primary text-white shadow-sm font-medium rounded-md bg-primary hover:bg-pink-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 sm:text-sm">
+                              Sign up
+                            </button>
+                          </Link>
                         </div>
                       </>
                     )}
