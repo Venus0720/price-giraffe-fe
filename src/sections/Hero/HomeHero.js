@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { SearchIcon } from '@heroicons/react/solid'
+import { useForm } from 'react-hook-form'
+import { useHistory } from 'react-router-dom'
 
 import images from 'assets/images'
 
 const HomeHero = () => {
-  const [search, setSearch] = useState('')
+  const { register, handleSubmit } = useForm({ mode: 'onSubmit' })
 
-  const searchChangeHandler = (e) => {
-    setSearch(e.target.value)
+  const history = useHistory()
+  const searchSubmit = (items) => {
+    history.push(`/search?keyword=${items.search}`)
   }
 
   return (
@@ -39,32 +42,36 @@ const HomeHero = () => {
                         </p>
                       </div>
                     </div>
-                    <div className="flex">
-                      <div className="flex-grow">
-                        <div className="relative rounded-md shadow-sm">
-                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <SearchIcon
-                              className="h-6 w-6 text-gray-400"
-                              aria-hidden="true"
+                    <form onSubmit={handleSubmit(searchSubmit)}>
+                      <div className="flex">
+                        <div className="flex-grow">
+                          <div className="relative rounded-md shadow-sm">
+                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                              <SearchIcon
+                                className="h-6 w-6 text-gray-400"
+                                aria-hidden="true"
+                              />
+                            </div>
+                            <input
+                              type="search"
+                              name="search"
+                              id="search"
+                              {...register('search', {
+                                required: 'enter a search'
+                              })}
+                              className="h-12 focus:ring-pink-500 focus:border-pink-500 block w-full pl-11 sm:text-sm border-gray-300 rounded-md"
+                              placeholder="What are you looking for today?"
                             />
                           </div>
-                          <input
-                            type="search"
-                            name="search"
-                            id="search"
-                            value={search}
-                            onChange={searchChangeHandler}
-                            className="h-12 focus:ring-pink-500 focus:border-pink-500 block w-full pl-11 sm:text-sm border-gray-300 rounded-md"
-                            placeholder="What are you looking for today?"
-                          />
+                        </div>
+                        <div className="mt-0 sm:flex-shrink-0 sm:flex sm:items-center ml-4">
+                          <button className="inline-flex items-center px-6 py-3 border border-transparent shadow-sm font-medium rounded-md text-white bg-primary hover:bg-pink-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 sm:text-sm">
+                            Search
+                          </button>
                         </div>
                       </div>
-                      <div className="mt-0 sm:flex-shrink-0 sm:flex sm:items-center ml-4">
-                        <button className="inline-flex items-center px-6 py-3 border border-transparent shadow-sm font-medium rounded-md text-white bg-primary hover:bg-pink-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 sm:text-sm">
-                          Search
-                        </button>
-                      </div>
-                    </div>
+                    </form>
+
                     <div className="mt-4">
                       <div className="mt-0">
                         <p className="text-gray-700">Find products from:</p>

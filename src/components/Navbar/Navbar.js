@@ -161,12 +161,12 @@ const Navbar = () => {
                     ) : (
                       <>
                         <div className="ml-4 flex">
-                          <button
+                          <div
                             onClick={() => dispatch(toggleModal('LOGIN'))}
-                            className="ml-6 inline-flex items-center px-10 py-2  text-primary font-medium rounded-3xl bg-transparent hover:text-pink-900 sm:text-sm"
+                            className="cursor-pointer ml-6 inline-flex items-center px-10 py-2  text-primary font-medium rounded-3xl bg-transparent hover:text-pink-900 sm:text-sm"
                           >
                             Sign in
-                          </button>
+                          </div>
                           <button
                             onClick={() => dispatch(toggleModal('LOGIN'))}
                             className="mr-6 inline-flex items-center px-10 py-2 border border-primary text-white shadow-sm font-medium rounded-md bg-primary hover:bg-pink-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 sm:text-sm"
@@ -299,14 +299,14 @@ const Navbar = () => {
                         as="a"
                         className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
                       >
-                        Sign Up
+                        Sign up
                       </Disclosure.Button>
                       <div onClick={() => dispatch(toggleModal('LOGIN'))}>
                         <Disclosure.Button
                           as="a"
                           className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
                         >
-                          Login
+                          Sign in
                         </Disclosure.Button>
                       </div>
                     </div>
