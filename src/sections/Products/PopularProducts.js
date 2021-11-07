@@ -3,7 +3,7 @@ import ProductGrid from 'components/Product/ProductGrid'
 import ProductService from 'services/product'
 
 const PopularProducts = () => {
-  const [isLoaded, setIsLoaded] = useState(true)
+  const [isLoaded, setIsLoaded] = useState(false)
   const [products, setProducts] = useState([])
   const [error, setError] = useState('')
 
