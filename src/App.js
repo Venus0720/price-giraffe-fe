@@ -10,6 +10,7 @@ import Terms from 'pages/Terms'
 import NoPageFound from 'pages/NoPageFound'
 import Search from 'pages/Search'
 import Category from 'pages/Category'
+import Product from 'pages/Product'
 
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
                 <Route path="/terms" component={Terms} />
                 <Route exact path="/search" component={Search} />
                 <Route exact path="/categories/:categoryId" component={Category} />
+                <Route exact path="/products/:productId" component={Product} />
                 <Route component={NoPageFound}/>
             </Switch>
         </>

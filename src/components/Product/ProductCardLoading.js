@@ -3,7 +3,7 @@ import SkeletonLine from 'components/Skeleton/SkeletonLine';
 export default function ProductCardLoading() {
   return (
     <div className="max-w-screen-sm bg-white rounded-lg">
-      <div className="animate-pulse bg-gray-300 aspect-w-1 aspect-h-1 rounded-t-lg" />
+      <div className="animate-pulse bg-gray-300 aspect-w-1 aspect-h-1 rounded-lg" />
       <div className="p-18px">
         <SkeletonLine className="mb-5px" />
         <SkeletonLine className="mb-5px" />
