@@ -1,5 +1,7 @@
 const spacingPxValues = [
   '5px',
+  '9px',
+  '10px',
   '14px',
   '18px',
   '21px',
@@ -7,8 +9,11 @@ const spacingPxValues = [
   '27px',
   '29px',
   '35px',
+  '60px',
   '64px',
   '80px',
+  '122px',
+  '160px',
   '240px'
 ]
 const spacingPx = {}
@@ -28,8 +33,12 @@ module.exports = {
       }
     },
     extend: {
+      borderRadius: {
+        '10px': '10px'
+      },
       colors: {
         grey: {
+          DEFAULT: 'var(--color-grey)',
           background: 'var(--color-grey-background)',
           border: 'var(--color-grey-border)'
         },
@@ -40,6 +49,7 @@ module.exports = {
         sans: ['Montserrat', 'sans-serif']
       },
       fontSize: {
+        '10px': ['10px', '12px'],
         '12px': ['12px', '14px'],
         '13px': [
           '13px',

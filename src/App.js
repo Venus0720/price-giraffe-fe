@@ -15,6 +15,7 @@ import Search from 'pages/Search'
 import Category from 'pages/Category'
 import Profile from 'pages/Profile'
 import SignUp from 'pages/SignUp'
+import Product from 'pages/Product'
 
 import { getCurrentUser } from 'reducers/userReducer'
 
@@ -47,6 +48,7 @@ const App = () => {
         {user && <Route path="/profile" component={Profile} />}
         <Route exact path="/search" component={Search} />
         <Route exact path="/categories/:categoryId" component={Category} />
+        <Route exact path="/products/:productId" component={Product} />
         <Route component={NoPageFound} />
       </Switch>
     </>

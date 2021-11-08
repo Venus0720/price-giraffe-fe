@@ -3,14 +3,24 @@ import ProductCard from './ProductCard';
 import ProductGridLoading from './ProductGridLoading';
 
 export default class ProductGrid extends Component {
+  constructor({ imageBorder = false, loadingRows = 2 }) {
+    super();
+    this.imageBorder = imageBorder;
+    this.loadingRows = loadingRows;
+  }
+
   render() {
     const { loading, products } = this.props;
     const listProducts = products.map((product) => (
-      <ProductCard product={product} key={product.id} />
+      <ProductCard
+        key={product.id}
+        product={product}
+        imageBorder={this.imageBorder}
+      />
     ));
 
     if (loading) {
-      return <ProductGridLoading />;
+      return <ProductGridLoading loadingRows={this.loadingRows} />;
     }
 
     return (
