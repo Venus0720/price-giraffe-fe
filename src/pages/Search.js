@@ -69,7 +69,6 @@ const Search = ({ location }) => {
                 <div className="font-semibold text-20px">
                   You searched for "{keyword}"
                 </div>
-                <ProductGrid loading={!isLoaded} products={products} />
               </div>
             </div>
           )}

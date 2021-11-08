@@ -6,19 +6,23 @@ const PopularProducts = () => {
   const [isLoaded, setIsLoaded] = useState(false)
   const [products, setProducts] = useState([])
   const [error, setError] = useState('')
+  const prodSvc = new ProductService()
 
   useEffect(() => {
-    const prodSvc = new ProductService()
-    prodSvc
-      .fetchMany({ keyword: 'apple' })
-      .then((res) => {
-        setProducts(res.data.products.splice(0, 10))
-      })
-      .catch((err) => {
+    async function fetchProducts() {
+      setIsLoaded(false)
+
+      try {
+        const { data } = await prodSvc.fetchMany({ keyword: 'apple' })
+        setProducts(data.products)
+        setIsLoaded(true)
+      } catch (err) {
         setError(err)
-        console.log(error)
-      })
-      .finally(() => setIsLoaded(true))
+      } finally {
+        setIsLoaded(true)
+      }
+    }
+    fetchProducts({ keyword: 'apple' })
   }, [])
 
   return (
