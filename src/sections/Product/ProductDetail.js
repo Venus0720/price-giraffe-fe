@@ -1,28 +1,36 @@
-import { BellIcon } from '@heroicons/react/outline';
-import { useContext } from 'react';
-import { UserContext } from 'contexts/User';
+import { BellIcon } from '@heroicons/react/outline'
+import { useSelector, useDispatch } from 'react-redux'
+
 import ProductFavorite from 'components/Product/ProductFavorite'
-import ProductImages from 'components/Product/ProductImages';
-import ProductPriceBox from 'components/Product/ProductPriceBox';
-import ProductService from 'services/product';
+import ProductImages from 'components/Product/ProductImages'
+import ProductPriceBox from 'components/Product/ProductPriceBox'
+import ProductService from 'services/product'
+import { toggleModal } from 'reducers/modalReducer'
+import { setNotificationMessage } from 'reducers/notificationReducer'
 
 export default function ProductDetail({ product }) {
-  const [state] = useContext(UserContext);
-  const prodSvc = new ProductService();
+  const dispatch = useDispatch()
+  const user = useSelector((state) => state.user || null)
+  const prodSvc = new ProductService()
 
   async function onSetAlert() {
-    if (!state.loggedIn) {
-      return alert('You must login first!');
+    if (!user) {
+      dispatch(toggleModal('LOGIN'))
+      return
     }
 
     try {
-      await prodSvc.addAlert(product.id);
-      alert('Set price alert success!')
+      await prodSvc.addAlert(product.id)
+      dispatch(
+        setNotificationMessage(
+          `Alert has been successfully added for ${product.product_name}`
+        )
+      )
     } catch (err) {
       if (err.status === 409) {
-        alert('The price alert has been set!');
+        alert('The price alert has been set!')
       } else {
-        alert(err.message);
+        alert(err.message)
       }
     }
   }
@@ -62,7 +70,10 @@ export default function ProductDetail({ product }) {
             price={product.number_sellers}
           />
         </div>
-        <button className="w-full xl:w-max bg-secondary p-4 rounded-lg font-bold text-13px tracking-normal text-white flex items-center justify-center md:justify-start gap-2" onClick={onSetAlert}>
+        <button
+          className="w-full xl:w-max bg-secondary p-4 rounded-lg font-bold text-13px tracking-normal text-white flex items-center justify-center md:justify-start gap-2"
+          onClick={onSetAlert}
+        >
           <span className="w-22px h-22px md:w-18px md:h-18px">
             <BellIcon />
           </span>
@@ -70,5 +81,5 @@ export default function ProductDetail({ product }) {
         </button>
       </div>
     </div>
-  );
+  )
 }
