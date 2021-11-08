@@ -26,7 +26,7 @@ const Search = ({ location }) => {
 
   useEffect(() => {
     if (!keyword) {
-      setProducts(x)
+      setProducts([])
       setIsLoaded(true)
       return
     }
