@@ -1,40 +1,45 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
 :root {
-    --color-grey: #f8f8f8;
-    --color-grey-background: #f7f7f7;
-    --color-grey-border: #efefef;
-    --color-primary: #f55685;
-    --color-secondary: #00004d;
+  --color-dark: #343333;
+  --color-grey: #f8f8f8;
+  --color-grey-background: #f7f7f7;
+  --color-grey-border: #efefef;
+  --color-primary: #f55685;
+  --color-secondary: #00004d;
 }
 
 @layer base {
-    @font-face {
-        font-family: "Quinta";
-        font-weight: 400;
-        src: url("./assets/fonts/quinta/BwQuintaPro-Regular.woff") format("woff");
-    }
-    @font-face {
-        font-family: "Quinta";
-        font-weight: 500;
-        src: url("./assets/fonts/quinta/BwQuintaPro-Medium.woff") format("woff");
-    }
-    @font-face {
-        font-family: "Quinta";
-        font-weight: 700;
-        src: url("./assets/fonts/quinta/BwQuintaPro-Bold.woff") format("woff");
-    }
-    @font-face {
-        font-family: "Quinta";
-        font-weight: 900;
-        src: url("./assets/fonts/quinta/BwQuintaPro-Black.woff") format("woff");
-    }
+  @font-face {
+    font-family: 'Quinta';
+    font-weight: 400;
+    src: url('./assets/fonts/quinta/BwQuintaPro-Regular.woff') format('woff');
+  }
+  @font-face {
+    font-family: 'Quinta';
+    font-weight: 500;
+    src: url('./assets/fonts/quinta/BwQuintaPro-Medium.woff') format('woff');
+  }
+  @font-face {
+    font-family: 'Quinta';
+    font-weight: 700;
+    src: url('./assets/fonts/quinta/BwQuintaPro-Bold.woff') format('woff');
+  }
+  @font-face {
+    font-family: 'Quinta';
+    font-weight: 900;
+    src: url('./assets/fonts/quinta/BwQuintaPro-Black.woff') format('woff');
+  }
+}
+
+html {
+  color: #111;
 }
 
 h1 {
-    font-family: "Roboto", sans-serif;
-    font-weight:900 !important;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900 !important;
 }
 
 h4,
@@ -43,19 +48,19 @@ h6,
 p,
 a,
 div {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
 }
 
-h2, h3 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600 !important;
+h2,
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600 !important;
 }
 
 .bg-gradient {
-    background-image: linear-gradient(to right,#F55685, #F8AB30);
+  background-image: linear-gradient(to right, #f55685, #f8ab30);
 }
-
 
 @tailwind base;
 @tailwind components;

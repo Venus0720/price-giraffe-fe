@@ -2,7 +2,7 @@ import ProductFavorite from 'components/Product/ProductFavorite'
 import { classNames, platformLogo } from 'helpers'
 
 export default function ProductCard({ product, imageBorder = false }) {
-  const platform = product.all_platforms[0]
+  const platform = product.all_platforms && product.all_platforms[0]
   const platformSvg = platformLogo(platform)
 
   return (
@@ -32,10 +32,14 @@ export default function ProductCard({ product, imageBorder = false }) {
             {product.product_name}
           </div>
           <div className="font-bold text-15px text-primary mb-21px">
-            From ${product.min_price}
+            From ${product.min_price || 0}
           </div>
           <div className="flex items-center justify-between gap-2">
-            <div className="flex-grow text-13px">Compare X Prices</div>
+            {product.number_sellers && (
+              <div className="flex-grow text-13px">
+                Compare {product.number_sellers} Prices
+              </div>
+            )}
             {platformSvg ? (
               <div className="max-w-64px max-h-27px">
                 <img src={platformSvg} alt={platform} />

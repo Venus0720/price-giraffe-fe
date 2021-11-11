@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import images from 'assets/images'
 import { classNames } from 'helpers'
 import ProductService from 'services/product'
