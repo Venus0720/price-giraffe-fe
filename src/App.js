@@ -11,6 +11,7 @@ import NoPageFound from 'pages/NoPageFound'
 import Search from 'pages/Search'
 import Category from 'pages/Category'
 import Product from 'pages/Product'
+import Favorites from 'pages/Favorites'
 
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
                 <Route exact path="/search" component={Search} />
                 <Route exact path="/categories/:categoryId" component={Category} />
                 <Route exact path="/products/:productId" component={Product} />
+                <Route exact path="/favorites" component={Favorites} />
                 <Route component={NoPageFound}/>
             </Switch>
         </>

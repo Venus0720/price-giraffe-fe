@@ -5,28 +5,36 @@ export default function Input({
   value,
   placeholder,
   icon,
+  onBlur = fnDefault,
   onChange = fnDefault,
   onInput = fnDefault
 }) {
-  const [_value, setValue] = useState(value);
+  const [currentValue, setCurrentValue] = useState(value);
+  const [changedValue, setChangedValue] = useState(null);
 
   function _onInput(e) {
-    setValue(e.target.value);
-    onInput && onInput(e.target.value);
+    const newValue = e.target.value;
+    setCurrentValue(newValue);
+    onInput(newValue);
   }
 
   function _onBlur(e) {
-    _onChange(e.target.value);
+    const newValue = e.target.value.trim();
+    onBlur(newValue);
+    _onChange(newValue);
   }
 
   function _onKeyPress(e) {
     if (e.key === 'Enter') {
-      _onChange(e.target.value);
+      _onChange(e.target.value.trim());
     }
   }
 
-  function _onChange(newValue) {
-    onChange && onChange(newValue);
+  function _onChange(value) {
+    if (changedValue !== value) {
+      setChangedValue(value);
+      onChange(value);
+    }
   }
 
   return (
@@ -42,7 +50,7 @@ export default function Input({
           'w-full h-10 rounded-lg border-grey-border py-3 pr-3 text-12px ' +
           (icon ? 'pl-10' : 'pl-3')
         }
-        value={_value}
+        value={currentValue}
         placeholder={placeholder}
         onBlur={_onBlur}
         onInput={_onInput}

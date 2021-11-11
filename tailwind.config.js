@@ -9,12 +9,14 @@ const spacingPxValues = [
   '27px',
   '29px',
   '35px',
+  '44px',
   '60px',
   '64px',
   '80px',
   '122px',
   '160px',
-  '240px'
+  '240px',
+  '320px'
 ];
 const spacingPx = {};
 spacingPxValues.forEach((value) => {
@@ -37,6 +39,7 @@ module.exports = {
         '10px': '10px'
       },
       colors: {
+        dark: 'var(--color-dark)',
         grey: {
           DEFAULT: 'var(--color-grey)',
           background: 'var(--color-grey-background)',

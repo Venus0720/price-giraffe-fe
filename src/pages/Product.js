@@ -33,7 +33,7 @@ export default function Product() {
     try {
       const { data } = await prodSvc.fetchOne(productId);
       const product = data.product;
-      setCategory(product.category);
+      setCategory(product.category || {});
       setProduct(product);
       setIsLoaded(true);
     } catch (error) {

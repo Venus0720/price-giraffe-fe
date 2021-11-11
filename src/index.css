@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
 :root {
+    --color-dark: #343333;
     --color-grey: #f8f8f8;
     --color-grey-background: #f7f7f7;
     --color-grey-border: #efefef;
@@ -30,6 +31,10 @@
         font-weight: 900;
         src: url("./assets/fonts/quinta/BwQuintaPro-Black.woff") format("woff");
     }
+}
+
+html {
+  color: #111;
 }
 
 h1 {

@@ -25,6 +25,10 @@ export default function Pagination({
     handleChange(current + 1);
   }
 
+  if (total <= pageSize) {
+    return null;
+  }
+
   return (
     <div className="flex items-center justify-end gap-2">
       <div className="text-sm">
