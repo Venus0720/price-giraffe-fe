@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import PriceAreaChart from 'components/Chart/PriceAreaChart';
-import { classNames, last180, last30, last7, last90 } from 'helpers';
+import { useState } from 'react'
+import PriceAreaChart from 'components/Chart/PriceAreaChart'
+import { classNames, last180, last30, last7, last90 } from 'helpers'
 
 export default function ProductPriceHistory({
   priceHistory = [],
   platform = ''
 }) {
-  const [data, setData] = useState(last30(priceHistory));
-  const [activeFilter, setActiveFilter] = useState('1 Month');
+  const [data, setData] = useState(last30(priceHistory))
+  const [activeFilter, setActiveFilter] = useState('1 Month')
 
   function FilterButton({ text, active, onClick }) {
     return (
@@ -19,13 +19,13 @@ export default function ProductPriceHistory({
             : 'bg-primary-background text-black'
         )}
         onClick={() => {
-          setActiveFilter(text);
-          onClick();
+          setActiveFilter(text)
+          onClick()
         }}
       >
         {text}
       </button>
-    );
+    )
   }
 
   return (
@@ -66,5 +66,5 @@ export default function ProductPriceHistory({
         </div>
       </div>
     </div>
-  );
+  )
 }

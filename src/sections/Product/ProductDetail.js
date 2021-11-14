@@ -1,11 +1,11 @@
-import { BellIcon } from '@heroicons/react/outline';
-import { useContext } from 'react';
-import { UserContext } from 'contexts/User';
-import PriceAreaChart from 'components/Chart/PriceAreaChart';
-import ProductFavorite from 'components/Product/ProductFavorite';
-import ProductImages from 'components/Product/ProductImages';
-import ProductPriceBox from 'components/Product/ProductPriceBox';
-import { fnDefault } from 'helpers';
+import { BellIcon } from '@heroicons/react/outline'
+import { useContext } from 'react'
+import { UserContext } from 'contexts/User'
+import PriceAreaChart from 'components/Chart/PriceAreaChart'
+import ProductFavorite from 'components/Product/ProductFavorite'
+import ProductImages from 'components/Product/ProductImages'
+import ProductPriceBox from 'components/Product/ProductPriceBox'
+import { fnDefault } from 'helpers'
 
 export default function ProductDetail({
   product = {},
@@ -13,14 +13,14 @@ export default function ProductDetail({
   onSetAlert = fnDefault,
   onShowDetail = fnDefault
 }) {
-  const [state] = useContext(UserContext);
+  const [state] = useContext(UserContext)
 
   function setAlert() {
     if (!state.loggedIn) {
-      return alert('You must login first!');
+      return alert('You must login first!')
     }
 
-    onSetAlert(product);
+    onSetAlert(product)
   }
 
   return (
@@ -91,5 +91,5 @@ export default function ProductDetail({
         </div>
       ) : null}
     </div>
-  );
+  )
 }

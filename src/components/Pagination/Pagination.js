@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { classNames, fnDefault } from 'helpers';
+import { useState } from 'react'
+import { classNames, fnDefault } from 'helpers'
 
 export default function Pagination({
   total,
@@ -7,26 +7,26 @@ export default function Pagination({
   currentPage = 1,
   onChange = fnDefault
 }) {
-  const [current, setCurrent] = useState(currentPage);
-  const totalPage = Math.ceil(total / pageSize);
+  const [current, setCurrent] = useState(currentPage)
+  const totalPage = Math.ceil(total / pageSize)
 
   const handleChange = (page) => {
-    setCurrent(page);
-    onChange(page);
-  };
+    setCurrent(page)
+    onChange(page)
+  }
 
   function onPrev() {
-    if (current === 1) return;
-    handleChange(current - 1);
+    if (current === 1) return
+    handleChange(current - 1)
   }
 
   function onNext() {
-    if (current === totalPage) return;
-    handleChange(current + 1);
+    if (current === totalPage) return
+    handleChange(current + 1)
   }
 
   if (total <= pageSize) {
-    return null;
+    return null
   }
 
   return (
@@ -53,5 +53,5 @@ export default function Pagination({
         Next
       </button>
     </div>
-  );
+  )
 }

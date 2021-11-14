@@ -1,77 +1,77 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import React, { useEffect, useLayoutEffect, useState } from 'react'
+import { useHistory, useParams } from 'react-router-dom'
 // import images from 'assets/images';
-import UserProvider from 'contexts/User';
-import Stacked from 'layout/Stacked';
-import BreadcrumbBlock from 'components/Breadcrumb/BreadcrumbBlock';
-import Pagination from 'components/Pagination/Pagination';
-import ProductGrid from 'components/Product/ProductGrid';
+import UserProvider from 'contexts/User'
+import Stacked from 'layout/Stacked'
+import BreadcrumbBlock from 'components/Breadcrumb/BreadcrumbBlock'
+import Pagination from 'components/Pagination/Pagination'
+import ProductGrid from 'components/Product/ProductGrid'
 // import Input from 'components/Input/Input';
-import ProductSort, { ProductSortItems } from 'components/Select/ProductSort';
-import CategoryService from 'services/category';
-import ProductService from 'services/product';
+import ProductSort, { ProductSortItems } from 'components/Select/ProductSort'
+import CategoryService from 'services/category'
+import ProductService from 'services/product'
 
 const Category = ({ location }) => {
-  const history = useHistory();
-  const perPage = 20;
+  const history = useHistory()
+  const perPage = 20
   const [currentPage, setCurrentPage] = useState(
     Number(new URLSearchParams(location.search).get('page')) || 1
-  );
-  const [sortOptions, setSortOptions] = useState(ProductSortItems[0].value);
-  const { categoryId } = useParams();
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [category, setCategory] = useState({});
-  const [products, setProducts] = useState([]);
-  const [total, setTotal] = useState(0);
+  )
+  const [sortOptions, setSortOptions] = useState(ProductSortItems[0].value)
+  const { categoryId } = useParams()
+  const [error, setError] = useState(null)
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [category, setCategory] = useState({})
+  const [products, setProducts] = useState([])
+  const [total, setTotal] = useState(0)
   // const keyword = new URLSearchParams(location.search).get('keyword') || '';
-  const categorySvc = new CategoryService();
-  const prodSvc = new ProductService();
+  const categorySvc = new CategoryService()
+  const prodSvc = new ProductService()
 
   useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
+    window.scrollTo(0, 0)
+  })
 
   useEffect(() => {
     Promise.allSettled([
       fetchCategory(+categoryId),
       fetchProducts({ /* keyword, */ ...fetchProductParams({}) })
-    ]);
-  }, []);
+    ])
+  }, [])
 
   async function fetchCategory(categoryId) {
     try {
-      const category = await categorySvc.fetchOne(categoryId);
-      setCategory(category);
+      const category = await categorySvc.fetchOne(categoryId)
+      setCategory(category)
     } catch (err) {
-      setCategory({ name: 'Category not found' });
+      setCategory({ name: 'Category not found' })
     }
   }
 
   async function fetchProducts(params) {
-    setIsLoaded(false);
+    setIsLoaded(false)
 
     try {
-      const { data } = await prodSvc.fetchMany(params);
+      const { data } = await prodSvc.fetchMany(params)
 
-      setProducts(data.products);
-      setTotal(data.total);
+      setProducts(data.products)
+      setTotal(data.total)
     } catch (err) {
-      setError(err);
+      setError(err)
     } finally {
-      setIsLoaded(true);
+      setIsLoaded(true)
     }
   }
 
   function onSortChange(sortParams) {
-    setSortOptions(sortParams);
-    return fetchProducts(fetchProductParams(sortParams));
+    setSortOptions(sortParams)
+    return fetchProducts(fetchProductParams(sortParams))
   }
 
   function onPaginate(page) {
-    setCurrentPage(page);
-    history.replace({ search: `?page=${page}` });
-    return fetchProducts(fetchProductParams({ page }));
+    setCurrentPage(page)
+    history.replace({ search: `?page=${page}` })
+    return fetchProducts(fetchProductParams({ page }))
   }
 
   function fetchProductParams({
@@ -85,7 +85,7 @@ const Category = ({ location }) => {
       category_id: +categoryId,
       sort_by: sortBy,
       sort_type: sortType
-    };
+    }
   }
 
   // function onKeywordChange(keyword) {
@@ -93,7 +93,7 @@ const Category = ({ location }) => {
   // }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div>Error: {error.message}</div>
   }
 
   return (
@@ -128,7 +128,7 @@ const Category = ({ location }) => {
         </div>
       </Stacked>
     </UserProvider>
-  );
-};
+  )
+}
 
-export default Category;
+export default Category

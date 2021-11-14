@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
-import { classNames } from 'helpers';
+import { useEffect, useState } from 'react'
+import { classNames } from 'helpers'
 
 export default function Tabs({ tabs, active = '' }) {
   const [activeTab, setActiveTab] = useState(
     tabs.find((tab) => tab.id === active) || tabs[0]
-  );
+  )
 
   useEffect(() => {
-    setActiveTab(tabs.find((tab) => tab.id === active) || tabs[0]);
-  }, [active, tabs]);
+    setActiveTab(tabs.find((tab) => tab.id === active) || tabs[0])
+  }, [active, tabs])
 
   return (
     <div id="product-tabs">
@@ -34,5 +34,5 @@ export default function Tabs({ tabs, active = '' }) {
       </div>
       {activeTab && activeTab.content}
     </div>
-  );
+  )
 }

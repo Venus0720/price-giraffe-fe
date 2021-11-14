@@ -1,61 +1,61 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import UserProvider from 'contexts/User';
-import Stacked from 'layout/Stacked';
-import BreadcrumbBlock from 'components/Breadcrumb/BreadcrumbBlock';
-import Pagination from 'components/Pagination/Pagination';
-import ProductGrid from 'components/Product/ProductGrid';
-import ProductService from 'services/product';
+import React, { useEffect, useLayoutEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import UserProvider from 'contexts/User'
+import Stacked from 'layout/Stacked'
+import BreadcrumbBlock from 'components/Breadcrumb/BreadcrumbBlock'
+import Pagination from 'components/Pagination/Pagination'
+import ProductGrid from 'components/Product/ProductGrid'
+import ProductService from 'services/product'
 
 const Search = ({ location }) => {
-  const prodSvc = new ProductService();
-  const history = useHistory();
-  const perPage = 20;
+  const prodSvc = new ProductService()
+  const history = useHistory()
+  const perPage = 20
   const [currentPage, setCurrentPage] = useState(
     Number(new URLSearchParams(location.search).get('page')) || 1
-  );
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [products, setProducts] = useState([]);
-  const [total, setTotal] = useState(0);
-  const keyword = new URLSearchParams(location.search).get('keyword');
+  )
+  const [error, setError] = useState(null)
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [products, setProducts] = useState([])
+  const [total, setTotal] = useState(0)
+  const keyword = new URLSearchParams(location.search).get('keyword')
 
   useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
+    window.scrollTo(0, 0)
+  })
 
   useEffect(() => {
     if (!keyword) {
-      setProducts([]);
-      setIsLoaded(true);
-      return;
+      setProducts([])
+      setIsLoaded(true)
+      return
     }
 
-    fetchProducts({});
-  }, []);
+    fetchProducts({})
+  }, [])
 
   async function fetchProducts({ page = currentPage }) {
-    setIsLoaded(false);
+    setIsLoaded(false)
 
     try {
-      const { data } = await prodSvc.fetchMany({ keyword, page, perPage });
-      setProducts(data.products);
-      setTotal(data.total);
+      const { data } = await prodSvc.fetchMany({ keyword, page, perPage })
+      setProducts(data.products)
+      setTotal(data.total)
     } catch (err) {
-      setError(err);
+      setError(err)
     } finally {
-      setIsLoaded(true);
+      setIsLoaded(true)
     }
   }
 
   function onPaginate(page) {
-    setCurrentPage(page);
-    history.replace({ search: `?keyword=${keyword}&page=${page}` });
-    return fetchProducts({ page });
+    setCurrentPage(page)
+    history.replace({ search: `?keyword=${keyword}&page=${page}` })
+    return fetchProducts({ page })
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div>Error: {error.message}</div>
   }
 
   return (
@@ -93,7 +93,7 @@ const Search = ({ location }) => {
         </div>
       </Stacked>
     </UserProvider>
-  );
-};
+  )
+}
 
-export default Search;
+export default Search

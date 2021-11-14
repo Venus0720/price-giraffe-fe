@@ -1,9 +1,9 @@
-import { classNames } from 'helpers';
-import ProductFavorite from './ProductFavorite';
-import ProductPlatformLogo from './ProductPlatformLogo';
+import { classNames } from 'helpers'
+import ProductFavorite from './ProductFavorite'
+import ProductPlatformLogo from './ProductPlatformLogo'
 
 export default function ProductCard({ product, imageBorder = false }) {
-  const platform = product.all_platforms && product.all_platforms[0];
+  const platform = product.all_platforms && product.all_platforms[0]
 
   return (
     <a href={'/products/' + product.id}>
@@ -49,5 +49,5 @@ export default function ProductCard({ product, imageBorder = false }) {
         <ProductFavorite productId={product.id} isFavorite={product.is_favor} />
       </div>
     </a>
-  );
+  )
 }
