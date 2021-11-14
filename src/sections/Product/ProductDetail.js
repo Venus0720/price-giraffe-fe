@@ -1,12 +1,18 @@
 import { BellIcon } from '@heroicons/react/outline';
 import { useContext } from 'react';
 import { UserContext } from 'contexts/User';
-import ProductFavorite from 'components/Product/ProductFavorite'
+import PriceAreaChart from 'components/Chart/PriceAreaChart';
+import ProductFavorite from 'components/Product/ProductFavorite';
 import ProductImages from 'components/Product/ProductImages';
 import ProductPriceBox from 'components/Product/ProductPriceBox';
 import { fnDefault } from 'helpers';
 
-export default function ProductDetail({ product = {}, onSetAlert = fnDefault }) {
+export default function ProductDetail({
+  product = {},
+  priceHistory = [],
+  onSetAlert = fnDefault,
+  onShowDetail = fnDefault
+}) {
   const [state] = useContext(UserContext);
 
   function setAlert() {
@@ -52,13 +58,38 @@ export default function ProductDetail({ product = {}, onSetAlert = fnDefault }) 
             price={product.number_sellers}
           />
         </div>
-        <button className="w-full xl:w-max bg-secondary p-4 rounded-lg font-bold text-13px tracking-normal text-white flex items-center justify-center md:justify-start gap-2" onClick={setAlert}>
+        <button
+          className="w-full xl:w-max bg-secondary p-4 rounded-lg font-bold text-13px tracking-normal text-white flex items-center justify-center md:justify-start gap-2"
+          onClick={setAlert}
+        >
           <span className="w-22px h-22px md:w-18px md:h-18px">
             <BellIcon />
           </span>
           <span>Set Price Alert</span>
         </button>
       </div>
+      {priceHistory.length ? (
+        <div className="md:col-span-full xl:col-span-3 xl:-ml-9 md:mt-11 xl:mt-0">
+          <div className="border border-grey-border rounded-14px px-18px py-4">
+            <div className="font-bold text-17px mb-1">Price History</div>
+            <div className="h-220px">
+              <PriceAreaChart
+                data={priceHistory}
+                platform={product.all_platforms && product.all_platforms[0]}
+              />
+            </div>
+            <div className="text-center">
+              <a
+                href="#product-tabs"
+                className="text-primary font-bold text-13px md:font-semibold md:text-sm hover:underline"
+                onClick={onShowDetail}
+              >
+                View Details
+              </a>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

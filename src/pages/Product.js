@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import UserProvider from 'contexts/User';
+import { last30 } from 'helpers';
 import Stacked from 'layout/Stacked';
 import AlertLimitModal from 'components/Alert/AlertLimitModal';
 import BreadcrumbBlock from 'components/Breadcrumb/BreadcrumbBlock';
@@ -17,11 +18,13 @@ export default function Product() {
   const productId = +useParams().productId;
   const [category, setCategory] = useState({});
   const [product, setProduct] = useState({});
+  const [priceHistory, setPriceHistory] = useState([]);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const [openLimitModal, setOpenLimitModal] = useState(false);
   const prodSvc = new ProductService();
+  const [activeTabId, setActiveTabId] = useState('sellers');
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -29,6 +32,7 @@ export default function Product() {
 
   useEffect(() => {
     fetchProduct(productId);
+    fetchPriceHistory(productId);
   }, []);
 
   async function fetchProduct(productId) {
@@ -41,6 +45,15 @@ export default function Product() {
       setIsLoaded(true);
     } catch (error) {
       setError(error);
+    }
+  }
+
+  async function fetchPriceHistory(productId) {
+    try {
+      const { data } = await prodSvc.fetchPriceHistory(productId);
+      setPriceHistory(data.histories);
+    } catch (error) {
+      // Do nothing
     }
   }
 
@@ -88,16 +101,36 @@ export default function Product() {
           className="mb-3"
         />
         <div className="container mb-12">
-          <ProductDetail product={product} onSetAlert={onSetAlert} />
+          <ProductDetail
+            product={product}
+            priceHistory={last30(priceHistory)}
+            onSetAlert={onSetAlert}
+            onShowDetail={() => setActiveTabId('price')}
+          />
         </div>
         <Tabs
+          active={activeTabId}
           tabs={[
-            { name: 'Prices', content: <ProductSellers product={product} /> },
             {
+              id: 'sellers',
+              name: 'Prices',
+              content: <ProductSellers product={product} />
+            },
+            {
+              id: 'info',
               name: 'Product Info',
               content: <ProductInfo product={product} />
             },
-            { name: 'Price History', content: <ProductPriceHistory /> }
+            {
+              id: 'price',
+              name: 'Price History',
+              content: (
+                <ProductPriceHistory
+                  priceHistory={priceHistory}
+                  platform={product.all_platforms && product.all_platforms[0]}
+                />
+              )
+            }
           ]}
         />
         <ProductSimilarList productId={product.id} />
@@ -107,7 +140,10 @@ export default function Product() {
           onConfirm={onConfirmSetAlert}
           onClose={() => setOpenModal(false)}
         />
-        <AlertLimitModal open={openLimitModal} onClose={() => setOpenLimitModal(false)} />
+        <AlertLimitModal
+          open={openLimitModal}
+          onClose={() => setOpenLimitModal(false)}
+        />
       </Stacked>
     </UserProvider>
   );

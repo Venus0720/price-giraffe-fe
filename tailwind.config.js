@@ -17,6 +17,7 @@ const spacingPxValues = [
   '122px',
   '160px',
   '200px',
+  '220px',
   '240px',
   '320px',
   '560px'
@@ -39,7 +40,9 @@ module.exports = {
     },
     extend: {
       borderRadius: {
+        '4px': '4px',
         '10px': '10px',
+        '14px': '14px',
         '20px': '20px'
       },
       colors: {
@@ -52,7 +55,8 @@ module.exports = {
         },
         primary: {
           DEFAULT: 'var(--color-primary)',
-          background: '#FFF8FA'
+          background: 'var(--color-primary-background)',
+          border: 'var(--color-primary-border)'
         },
         secondary: 'var(--color-secondary)'
       },
@@ -71,6 +75,7 @@ module.exports = {
           }
         ],
         '15px': ['15px', '28px'],
+        '17px': ['17px', '30px'],
         '20px': [
           '20px',
           {

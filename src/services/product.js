@@ -9,6 +9,11 @@ export default class ProductService extends BaseService {
     return this.axios.get(`/${productId}/similar_products`, { params });
   }
 
+  // Price History
+  fetchPriceHistory(productId, params = {}) {
+    return this.axios.get(`/${productId}/price_histories`, { params });
+  }
+
   // Sellers
   fetchSellers(productId, params = {}) {
     return this.axios.get(`/${productId}/sellers`, { params });

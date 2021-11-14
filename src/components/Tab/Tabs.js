@@ -1,11 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { classNames } from 'helpers';
 
-export default function Tabs({ tabs }) {
-  const [activeTab, setActiveTab] = useState(tabs[0]);
+export default function Tabs({ tabs, active = '' }) {
+  const [activeTab, setActiveTab] = useState(
+    tabs.find((tab) => tab.id === active) || tabs[0]
+  );
+
+  useEffect(() => {
+    setActiveTab(tabs.find((tab) => tab.id === active) || tabs[0]);
+  }, [active, tabs]);
 
   return (
-    <div>
+    <div id="product-tabs">
       <div className="bg-white">
         <div className="container">
           <div className="flex">
@@ -26,7 +32,7 @@ export default function Tabs({ tabs }) {
           </div>
         </div>
       </div>
-      {activeTab.content}
+      {activeTab && activeTab.content}
     </div>
   );
 }
