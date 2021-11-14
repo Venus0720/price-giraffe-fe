@@ -1,4 +1,4 @@
-import { classNames } from 'helpers';
+import { classNames } from 'helpers'
 
 export default function ProductInfo({ product }) {
   function gridItem(key, value, primary = false) {
@@ -17,15 +17,17 @@ export default function ProductInfo({ product }) {
         </div>
         <hr />
       </>
-    );
+    )
   }
 
   return (
     <div className="bg-white pt-8 pb-10">
       <div className="container">
-        <div className="font-bold text-20px mb-5">Product Info</div>
-        <div className="pl-4">
-          <div className="font-normal text-sm mb-4">
+        <div className="font-bold text-14px md:text-20px mb-2 md:mb-5">
+          Product Info
+        </div>
+        <div className="md:pl-4">
+          <div className="font-normal text-sm mb-6 md:mb-4">
             Lowest price for {product.product_name} is ${product.min_price}
           </div>
           <div className="font-bold mb-1">Product</div>
@@ -34,5 +36,5 @@ export default function ProductInfo({ product }) {
         </div>
       </div>
     </div>
-  );
+  )
 }

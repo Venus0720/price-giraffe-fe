@@ -7,6 +7,8 @@
   --color-grey-background: #f7f7f7;
   --color-grey-border: #efefef;
   --color-primary: #f55685;
+  --color-primary-background: #fff8fa;
+  --color-primary-border: #ffced8;
   --color-secondary: #00004d;
 }
 
@@ -31,6 +33,10 @@
     font-weight: 900;
     src: url('./assets/fonts/quinta/BwQuintaPro-Black.woff') format('woff');
   }
+}
+
+html {
+  color: #111;
 }
 
 html {
