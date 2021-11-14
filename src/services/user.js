@@ -12,8 +12,11 @@ const getUser = async () => {
 }
 
 const loginUser = async (credentials) => {
-  const response = await axios.post('/api/v1/login', credentials)
-  return response.data
+  const response = await axios.post(
+    'https://pricegiraffe.co/api/v1/login',
+    credentials
+  )
+  return response
 }
 
 const signUpUser = async (credentials) => {

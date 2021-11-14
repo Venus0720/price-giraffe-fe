@@ -19,18 +19,20 @@ const LoginModal = () => {
     formState: { errors }
   } = useForm({ mode: 'onSubmit' })
 
+  const errorsArray = Object.keys(errors).map((key) => errors[key].message)
+
   const onFormSubmit = async (credentials) => {
     try {
-      dispatch(loginUser(credentials))
+      const response = await dispatch(loginUser(credentials))
+      console.log(response)
       dispatch(toggleModal())
       dispatch(setNotificationMessage('Successfully logged in!'))
     } catch (err) {
-      console.log(err)
-      dispatch(setNotificationMessage(err))
+      console.log(err.message)
+      errorsArray.push(err.data)
+      console.log(errorsArray)
     }
   }
-
-  const errorsArray = Object.keys(errors).map((key) => errors[key].message)
 
   return (
     modal && (
