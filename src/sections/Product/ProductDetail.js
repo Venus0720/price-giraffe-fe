@@ -4,27 +4,17 @@ import { UserContext } from 'contexts/User';
 import ProductFavorite from 'components/Product/ProductFavorite'
 import ProductImages from 'components/Product/ProductImages';
 import ProductPriceBox from 'components/Product/ProductPriceBox';
-import ProductService from 'services/product';
+import { fnDefault } from 'helpers';
 
-export default function ProductDetail({ product }) {
+export default function ProductDetail({ product = {}, onSetAlert = fnDefault }) {
   const [state] = useContext(UserContext);
-  const prodSvc = new ProductService();
 
-  async function onSetAlert() {
+  function setAlert() {
     if (!state.loggedIn) {
       return alert('You must login first!');
     }
 
-    try {
-      await prodSvc.addAlert(product.id);
-      alert('Set price alert success!')
-    } catch (err) {
-      if (err.status === 409) {
-        alert('The price alert has been set!');
-      } else {
-        alert(err.message);
-      }
-    }
+    onSetAlert(product);
   }
 
   return (
@@ -62,7 +52,7 @@ export default function ProductDetail({ product }) {
             price={product.number_sellers}
           />
         </div>
-        <button className="w-full xl:w-max bg-secondary p-4 rounded-lg font-bold text-13px tracking-normal text-white flex items-center justify-center md:justify-start gap-2" onClick={onSetAlert}>
+        <button className="w-full xl:w-max bg-secondary p-4 rounded-lg font-bold text-13px tracking-normal text-white flex items-center justify-center md:justify-start gap-2" onClick={setAlert}>
           <span className="w-22px h-22px md:w-18px md:h-18px">
             <BellIcon />
           </span>

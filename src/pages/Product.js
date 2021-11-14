@@ -2,21 +2,25 @@ import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import UserProvider from 'contexts/User';
 import Stacked from 'layout/Stacked';
+import AlertLimitModal from 'components/Alert/AlertLimitModal';
 import BreadcrumbBlock from 'components/Breadcrumb/BreadcrumbBlock';
+import ProductConfirmAlertModal from 'components/Product/ProductConfirmAlertModal';
 import ProductInfo from 'components/Product/ProductInfo';
 import ProductPriceHistory from 'components/Product/ProductPriceHistory';
 import ProductSellers from 'components/Product/ProductSellers';
-import Tabs from 'components/Tab/Tabs'
+import Tabs from 'components/Tab/Tabs';
 import ProductDetail from 'sections/Product/ProductDetail';
 import ProductSimilarList from 'sections/Product/ProductSimilarList';
 import ProductService from 'services/product';
 
 export default function Product() {
-  const { productId } = useParams();
+  const productId = +useParams().productId;
   const [category, setCategory] = useState({});
   const [product, setProduct] = useState({});
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const [openLimitModal, setOpenLimitModal] = useState(false);
   const prodSvc = new ProductService();
 
   useLayoutEffect(() => {
@@ -24,7 +28,6 @@ export default function Product() {
   });
 
   useEffect(() => {
-    console.log('productId', productId);
     fetchProduct(productId);
   }, []);
 
@@ -39,6 +42,31 @@ export default function Product() {
     } catch (error) {
       setError(error);
     }
+  }
+
+  async function setAlert(productId) {
+    try {
+      await prodSvc.addAlert(productId);
+    } catch (err) {
+      if (err.status === 422) {
+        return setOpenLimitModal(true);
+      }
+
+      if (err.status === 409) {
+        return alert('The price alert has been set!');
+      }
+
+      alert(err.message);
+    }
+  }
+
+  function onSetAlert() {
+    setOpenModal(true);
+  }
+
+  function onConfirmSetAlert() {
+    setOpenModal(false);
+    setTimeout(() => setAlert(productId), 300);
   }
 
   if (error) {
@@ -60,14 +88,26 @@ export default function Product() {
           className="mb-3"
         />
         <div className="container mb-12">
-          <ProductDetail product={product} />
+          <ProductDetail product={product} onSetAlert={onSetAlert} />
         </div>
-        <Tabs tabs={[
-          { name: 'Prices', content: <ProductSellers product={product} /> },
-          { name: 'Product Info', content: <ProductInfo product={product} /> },
-          { name: 'Price History', content: <ProductPriceHistory /> }
-        ]} />
+        <Tabs
+          tabs={[
+            { name: 'Prices', content: <ProductSellers product={product} /> },
+            {
+              name: 'Product Info',
+              content: <ProductInfo product={product} />
+            },
+            { name: 'Price History', content: <ProductPriceHistory /> }
+          ]}
+        />
         <ProductSimilarList productId={product.id} />
+        <ProductConfirmAlertModal
+          product={product}
+          open={openModal}
+          onConfirm={onConfirmSetAlert}
+          onClose={() => setOpenModal(false)}
+        />
+        <AlertLimitModal open={openLimitModal} onClose={() => setOpenLimitModal(false)} />
       </Stacked>
     </UserProvider>
   );

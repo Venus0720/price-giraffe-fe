@@ -10,13 +10,16 @@ const spacingPxValues = [
   '29px',
   '35px',
   '44px',
+  '50px',
   '60px',
   '64px',
   '80px',
   '122px',
   '160px',
+  '200px',
   '240px',
-  '320px'
+  '320px',
+  '560px'
 ];
 const spacingPx = {};
 spacingPxValues.forEach((value) => {
@@ -36,16 +39,21 @@ module.exports = {
     },
     extend: {
       borderRadius: {
-        '10px': '10px'
+        '10px': '10px',
+        '20px': '20px'
       },
       colors: {
+        969696: '#969696',
         dark: 'var(--color-dark)',
         grey: {
           DEFAULT: 'var(--color-grey)',
           background: 'var(--color-grey-background)',
           border: 'var(--color-grey-border)'
         },
-        primary: 'var(--color-primary)',
+        primary: {
+          DEFAULT: 'var(--color-primary)',
+          background: '#FFF8FA'
+        },
         secondary: 'var(--color-secondary)'
       },
       fontFamily: {
@@ -53,6 +61,7 @@ module.exports = {
       },
       fontSize: {
         '10px': ['10px', '12px'],
+        '11px': ['11px', '11px'],
         '12px': ['12px', '14px'],
         '13px': [
           '13px',
@@ -74,7 +83,14 @@ module.exports = {
         ...spacingPx
       },
       maxWidth: {
-        ...spacingPx
+        ...spacingPx,
+        '1/6': '16.666667%',
+        '1/4': '25%',
+        '1/3': '33.333333%',
+        '1/2': '50%',
+        '2/3': '66.666667%',
+        '3/4': '75%',
+        '5/6': '83.333333%'
       },
       spacing: {
         ...spacingPx
@@ -82,7 +98,9 @@ module.exports = {
     }
   },
   variants: {
-    extend: {}
+    extend: {
+      backgroundColor: ['even']
+    }
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),

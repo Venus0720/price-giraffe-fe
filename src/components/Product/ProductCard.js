@@ -1,9 +1,9 @@
-import ProductFavorite from 'components/Product/ProductFavorite';
-import { classNames, platformLogo } from 'helpers';
+import { classNames } from 'helpers';
+import ProductFavorite from './ProductFavorite';
+import ProductPlatformLogo from './ProductPlatformLogo';
 
 export default function ProductCard({ product, imageBorder = false }) {
   const platform = product.all_platforms && product.all_platforms[0];
-  const platformSvg = platformLogo(platform);
 
   return (
     <a href={'/products/' + product.id}>
@@ -40,13 +40,10 @@ export default function ProductCard({ product, imageBorder = false }) {
                 Compare {product.number_sellers} Prices
               </div>
             )}
-            {platformSvg ? (
-              <div className="max-w-64px max-h-27px">
-                <img src={platformSvg} alt={platform} />
-              </div>
-            ) : (
-              <div className="max-w-64px text-13px">{platform}</div>
-            )}
+            <ProductPlatformLogo
+              platform={platform}
+              className="max-w-64px max-h-27px"
+            />
           </div>
         </div>
         <ProductFavorite productId={product.id} isFavorite={product.is_favor} />

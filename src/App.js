@@ -12,6 +12,7 @@ import Search from 'pages/Search'
 import Category from 'pages/Category'
 import Product from 'pages/Product'
 import Favorites from 'pages/Favorites'
+import Alerts from 'pages/Alerts'
 
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
                 <Route exact path="/categories/:categoryId" component={Category} />
                 <Route exact path="/products/:productId" component={Product} />
                 <Route exact path="/favorites" component={Favorites} />
+                <Route exact path="/alerts" component={Alerts} />
                 <Route component={NoPageFound}/>
             </Switch>
         </>
